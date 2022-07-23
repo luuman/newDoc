@@ -2,6 +2,7 @@ interviewFe
 
 ?> 完善示例
 
+
 #### ceshi
 
 + Question 2? +
@@ -12,6 +13,8 @@ interviewFe
 
 #### ceshi
 
+
+
 - [ ] foo
 - bar
 - [x] baz
@@ -19,7 +22,11 @@ interviewFe
   - [ ] bim
   - [ ] lim
 
+
 <div id="gitalk-container"></div>
+
+
+
 
 <details>
 <summary>自我评价（点击展开）
@@ -29,8 +36,8 @@ interviewFe
 - [] bam <~ not working
   - [ ] bim
   - [ ] lim
-  -
-  -
+  - 
+  - 
 
 </summary>
 
@@ -39,11 +46,13 @@ interviewFe
 
 </details>
 
+
 - [ ] foo
 - bar
 - [x] baz
 - [] bam <~ not working
   - [ ] bim
   - [ ] lim
-  -
-  -
+  - 
+  - 
+

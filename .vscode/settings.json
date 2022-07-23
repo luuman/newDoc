@@ -1,0 +1,84 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.confirmDelete": false,
+    "editor.tabSize": 4,
+    "files.autoSave": "off",
+    "editor.fontSize": 14, // 设置字体
+    "editor.tabCompletion": "on", // 用来在出现推荐值时，按下Tab键是否自动填入最佳推荐值
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": false // 这个属性能够在保存时，自动调整 import 语句相关顺序，能够让你的 import 语句按照字母顺序进行排列
+    },
+    "editor.formatOnSave": true,
+    "javascript.validate.enable": false,
+
+    // #让vue中的js按"prettier"格式进行格式化
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "vetur.format.options.tabSize": 2,
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // #vue组件中html代码格式化样式
+            "wrap_attributes": "force-aligned", //也可以设置为“auto”，效果会不一样
+            "wrap_line_length": 200,
+            "end_with_newline": false,
+            "semi": false,
+            "singleQuote": true
+        },
+        "prettier": {
+            "semi": true,
+            "singleQuote": true,
+            "editor.tabSize": 4,
+            "wrap_attributes": "force-aligned"
+        },
+        "prettyhtml": {
+            "printWidth": 160,
+            "singleQuote": false,
+            "wrapAttributes": false,
+            "sortAttributes": false
+        }
+    },
+
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur",
+        "editor.formatOnSave": true
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "editor.mouseWheelZoom": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript|react]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript|react]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "formatFiles.excludedFolders": [
+        "node_modules",
+        ".vscode",
+        ".git",
+        "dist",
+        ".chrome",
+        "avr_electron_6.1.12",
+        "devtools",
+        "dist_electron",
+        "public\\sdk\\lib",
+        "public",
+        ".scannerwork"
+    ],
+    "formatFiles.extensionsToInclude": "vue"
+}

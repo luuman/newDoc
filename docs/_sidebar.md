@@ -1,2 +1,3 @@
 - [每日一题](/note/)
-
+- [JavaScript](/note/JavaScript/)
+- [Stock](/note/Stock/)
