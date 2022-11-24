@@ -15,7 +15,7 @@
 | ![dist_electron/](/router/dist_electron/)      | 打包导出地址 |          | 待完善 :punch: |
 | ![docs/](/router/docs/)                        |              |          | 待完善 :punch: |
 | ![logs/](/router/logs/)                        |              |          | 待完善 :punch: |
-| ![node_modules/](/router/node_modules/)        | 组件库       |          | 待完善 :punch: |
+| [node_modules/](/router/node_modules/)        | 组件库       |          | 待完善 :punch: |
 | ![nsis_build/](/router/nsis_build/)            | nsis         |          | 待完善 :punch: |
 | ![patches/](/router/patches/)                  |              |          | 待完善 :punch: |
 | ![public/](/router/public/)                    | 公共资源     |          | 待完善 :punch: |
@@ -166,12 +166,12 @@ peer: {
 }
 ```
 
-src\utils\dataUtil.js
+[dataUtil.js](src\utils\dataUtil.js)
 renderDisplayName
 昵称备注显示逻辑
 
-src\utils\Function.js
+[Function.js](src\utils\Function.js)
 cname
 
-src\components\ChatHead.vue
+[ChatHead.vue](src\components\ChatHead.vue)
 viewChatName
