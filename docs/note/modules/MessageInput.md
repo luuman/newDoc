@@ -1,3 +1,83 @@
+```mermaid
+stateDiagram
+    state SendFileDialog.vue {
+    emitSendMsg1 : emitSendMsg
+    [*] --> emitSendMsg1
+    emitSendMsg1 --> emitMsg : true
+    note right of emitSendMsg1 : emitSendMsg
+  }
+  state RightContentPanel.vue {
+    emitSendMsg2 : emitSendMsg
+    [*] --> emitSendMsg2
+    [*] --> emojiClick
+    emitSendMsg2 --> emitMsg
+    note right of emitSendMsg2 : emitSendMsg
+  }
+  state "数据库" as DB {
+    DB1
+  }
+  state MessageInput.vue {
+    UP1: 发送按钮
+    UP1-->emitMsg
+    emitMsg-->onkeyEvent
+    state Y2 <<choice>>
+    state Y3 <<choice>>
+    onkeyEvent-->Y2: 键盘类型
+    Y2-->checkAutocomplete: keyup
+    Y2-->checkAutocomplete: input
+    Y2-->onMessageSubmit: keydown
+    onMessageSubmit-->batchSend: fromPasteText
+    onMessageSubmit-->batchSend
+    onMessageSubmit-->batchSend
+    note right of onMessageSubmit : 转发 重新编辑
+    onMessageSubmit-->hideSuggestions
+    checkAutocomplete-->Y3
+    pasteHandle-->onkeyEvent
+    checkAutocomplete-->getRichValueWithCaret
+    getRichValueWithCaret-->getRichElementValue
+    getRichElementValue-->getRichElementValue: curChild多行情况时
+    state Msg3 发送 {
+      batchSend--> longTxtSend
+      longTxtSend-->saveFile
+      saveFile-->longTxtSend: then
+    }
+    state Msg3 粘贴 {
+      [*] --> pasteHandle
+      pasteHandle-->pasteHandle
+    }
+    state Msg3 正则匹配 {
+      Y3-->suggestionHandle: 匹配@通过
+      suggestionHandle-->renderMember: 已缓存
+      suggestionHandle-->getGroupPeerList: 未缓存
+      state Y4 <<choice>>
+      Y4-->getHidFromGroupFts: 请求失败
+      getHidFromGroupFts-->getGroupPeerList: groupHidList
+      getGroupPeerList-->renderMember: groupHidList
+    }
+
+    state emojiClick1 表情 {
+      emojiClick-->emojiSelected
+      emojiClick-->hideSuggestions
+      emojiClick-->onChange
+    }
+    note left of onChange : 输入框变化
+  }
+  state peerApi.js{
+    getGroupUidList
+  }
+  state uiControl.js{
+    hideSuggestions: SET_SUGGESTION_PANNEL_VISABLE
+  }
+  state FileApi.js{
+    saveFile
+  }
+  getGroupPeerList-->getGroupUidList
+  getGroupUidList-->Y4: then
+  Y4-->getGroupPeerList: groupHidList
+  getHidFromGroupFts-->DB1
+  DB1-->getHidFromGroupFts: then
+```
+
 # 输入框 messageIput
 
 ## MessageInput
@@ -24,46 +104,46 @@
 
 #### **data**
 
-| data               | 描述                     |
-| ------------------ | ------------------------ |
-| isFocus            | 编辑状态（默认：未选中） |
-| matchVal           |     模糊匹配 （@ 或 ：表情）                    |
-| reqIdList          |       匹配成员列表                   |
-| inputValue         | 输入框内容               |
-| isBanned           | 是否被禁言               |
-| pos                | 光标位置                 |
-| autoCompleteRegEx  | 规则                     |
-| lastLength         |                          |
-| lastTyping         |                          |
-| keyupStarted       |                          |
-| selection          | 光标选中内容             |
-| previousQuery      |  正则匹配到的内容（未见实际使用）                        |
-| wasEmpty           |                          |
-| selectedSuggeElmID |                          |
-| currentSelection   |                          |
-| selId              | @人的位置                |
-| minInputHeight     |                          |
-| maxInputHeight     |                          |
-| offsetGap          |                          |
-| auctoCompleteMatch |                          |
+| data               | 描述                             |
+| ------------------ | -------------------------------- |
+| isFocus            | 编辑状态（默认：未选中）         |
+| matchVal           | 模糊匹配 （@ 或 ：表情）         |
+| reqIdList          | 匹配成员列表                     |
+| inputValue         | 输入框内容                       |
+| isBanned           | 是否被禁言                       |
+| pos                | 光标位置                         |
+| autoCompleteRegEx  | 规则                             |
+| lastLength         |                                  |
+| lastTyping         |                                  |
+| keyupStarted       |                                  |
+| selection          | 光标选中内容                     |
+| previousQuery      | 正则匹配到的内容（未见实际使用） |
+| wasEmpty           |                                  |
+| selectedSuggeElmID |                                  |
+| currentSelection   |                                  |
+| selId              | @人的位置                        |
+| minInputHeight     |                                  |
+| maxInputHeight     |                                  |
+| offsetGap          |                                  |
+| auctoCompleteMatch |                                  |
 
 #### **computed**
 
 suggestionList 群成员缓存列表
 uiControl
 
-| computed                | 描述 |
-| ----------------------- | ---- |
-| actDialogId             | 监听聊天框 ID（清空缓存）   |
-| suggestionPannelVisable |      |
-| suggestionHid           |   缓存列表 ID   |
-| memberList              |   缓存成员列表   |
-| foundList               |  过滤后成员列表    |
-| iWasBlocked             |  是否被拉黑    |
+| computed                | 描述                      |
+| ----------------------- | ------------------------- |
+| actDialogId             | 监听聊天框 ID（清空缓存） |
+| suggestionPannelVisable |                           |
+| suggestionHid           | 缓存列表 ID               |
+| memberList              | 缓存成员列表              |
+| foundList               | 过滤后成员列表            |
+| iWasBlocked             | 是否被拉黑                |
 
 #### **methods**
 
-| methods              | 描述                     | 描述              |
+| methods               | 描述                     | 描述              |
 | --------------------- | ------------------------ | ----------------- |
 | emojiClick            | 输入表情                 | F                 |
 | emojiSelected         | 替换表情元素             | emojiClick        |
@@ -83,14 +163,14 @@ uiControl
 | onInputChange         | 同步输入框内容           |                   |
 | checkInputHeight      | 修改输入框高度           |                   |
 | getRichElementValue   | 的所发生的               |                   |
-| checkAutocomplete     | 清空输入框触发             |          checkAutocomplete         |
-| cleanRichTextarea          | 的所发生的               |                   |
+| checkAutocomplete     | 清空输入框触发           | checkAutocomplete |
+| cleanRichTextarea     | 的所发生的               |                   |
 | getRichValue          | 的所发生的               |                   |
 | isMemberMath          | 群成员过滤               |                   |
 | renderMember          | 渲染成员列表             |                   |
 | suggestionHandle      | 的所发生的               | checkAutocomplete |
 | getHidFromGroupFts    | 数据库获取群成员         |                   |
-| getGroupPeerList      | 获取群成员           |                   |
+| getGroupPeerList      | 获取群成员               |                   |
 | clearAllReq           | 清除缓存数据             |                   |
 | focusHandle           | 聚焦输入框               |                   |
 | showInlineSuggestions |                          | 未使用            |
@@ -111,42 +191,42 @@ uiControl
 
 <!-- tabs:end -->
 
-  M1[emojiClick]
-  M2[emojiSelected]
-  M3[handleUndo]
-  M4[setRichFocus]
-  M5[restoreSelection]
-  M6[clickInputWarp]
-  M7[rightClickWarp]
-  M8[dbclick]
-  M9[selectMemberHandle]
-  M10[getEmojiHtml]
-  M11[getRichHtml]
-  M12[hideSuggestions]
-  M13[inputFocusHandle]
-  M14[inputBlurHandle]
-  M15[onChange]
-  M16[onInputChange]
-  M17[checkInputHeight]
+M1[emojiClick]
+M2[emojiSelected]
+M3[handleUndo]
+M4[setRichFocus]
+M5[restoreSelection]
+M6[clickInputWarp]
+M7[rightClickWarp]
+M8[dbclick]
+M9[selectMemberHandle]
+M10[getEmojiHtml]
+M11[getRichHtml]
+M12[hideSuggestions]
+M13[inputFocusHandle]
+M14[inputBlurHandle]
+M15[onChange]
+M16[onInputChange]
+M17[checkInputHeight]
 
-  M20[cleanRichTextarea]
-  M21[getRichValue]
-  M22[isMemberMath]
-  M23[renderMember]
+M20[cleanRichTextarea]
+M21[getRichValue]
+M22[isMemberMath]
+M23[renderMember]
 
-  M27[clearAllReq]
-  M28[focusHandle]
-  M29[showInlineSuggestions]
-  M30[blurHandle]
+M27[clearAllReq]
+M28[focusHandle]
+M29[showInlineSuggestions]
+M30[blurHandle]
 
-  M33[updateInputerHeight]
-  M34[isJsonString]
+M33[updateInputerHeight]
+M34[isJsonString]
 
-  M37[onMessageSubmit]
-  M38[handleMetionKeyborad]
-  M39[onkeyEvent]
-  M40[messageSubmit]
-  M41[resetMessageInputer]
+M37[onMessageSubmit]
+M38[handleMetionKeyborad]
+M39[onkeyEvent]
+M40[messageSubmit]
+M41[resetMessageInputer]
 
 ```mermaid
 graph TD
@@ -276,7 +356,7 @@ vuex 缓存群成员，缓存了直接渲染，未缓存拉取最新群成员。
 `/(\S|^|\s)(:|@)([\S]*)$/`匹配分为三部分`起始或有空格、没有空格`, `匹配@或：`, `没有空格`结束
 `/(^|\s|[?!\@|\S])(:|@)([\S]*)$/`匹配分为三部分`起始或有空格、没有空格或者不等于@`, `匹配@或：`, `没有空格`结束
 
-![](https://tooltt.com/regulex/r.html#!cmd=export&flags=&re=(%5CS%7C%5E%7C%5Cs)(%3A%7C%40)(%5B%5CS%5D*)%24)
+![](<https://tooltt.com/regulex/r.html#!cmd=export&flags=&re=(%5CS%7C%5E%7C%5Cs)(%3A%7C%40)(%5B%5CS%5D*)%24>)
 
 SearchIndexManager
 

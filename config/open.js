@@ -1,2 +1,2 @@
-let open = require('open');
-open('http://localhost:6010')
+let open = require("open");
+open("http://localhost:6010");
