@@ -1,9 +1,10 @@
-| 文件名称                                       | 描述     | 标签分类 | 更新状态       |
-| ---------------------------------------------- | -------- | -------- | -------------- |
+| 文件名称                                        | 描述     | 标签分类 | 更新状态       |
+| ----------------------------------------------- | -------- | -------- | -------------- |
+| :arrow_left: [目录](/router/)                   | API      |          | 待完善 :punch: |
 | ![api/](/router/src/api/)                       | API      |          | 待完善 :punch: |
 | ![assets/](/router/src/assets/)                 | 静态资源 |          | 待完善 :punch: |
 | ![buildConfig/](/router/src/buildConfig/)       | 打包配置 |          | 待完善 :punch: |
-| [components/](/router/src/components/)         | 公共组件 |          | 待完善 :punch: |
+| [components/](/router/src/components/)          | 公共组件 |          | 待完善 :punch: |
 | ![config/](/router/src/config/)                 |          |          | 待完善 :punch: |
 | ![dataController/](/router/src/dataController/) |          |          | 待完善 :punch: |
 | ![directive/](/router/src/directive/)           |          |          | 待完善 :punch: |
