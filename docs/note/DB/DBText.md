@@ -1,7 +1,9 @@
-数据库表
+# 数据库表
+
+## db.enc
 
 ```mermaid
-graph TD
+<!-- graph TD
   subgraph message[消息表]
 		uuid
     dialogId
@@ -30,30 +32,30 @@ graph TD
   dialogId-->|keyup|hid
   subgraph TOP[MessageInput]
     M39-->Y2{键盘类型}
-  end
+  end -->
 ```
 
 <!-- tabs:start -->
 
 #### **session**
 
-| 会话表          |  类型   | 默认值 | 废弃 |            描述             |
-| --------------- | :-----: | :----: | :--: | :-------------------------: |
-| id              | INTEGER |  KEY   |      |             KEY             |
-| hostId          |  TEXT   |   ''   |      |           本人 ID           |
-| hid             |  TEXT   |   ''   |      |           会话 id           |
-| enterpriseId    |  TEXT   |  NULL  |      |       空间 id（废弃）       |
-| myBlock         |  TEXT   |  NULL  |      |      被我拉黑的人列表       |
-| remindlist      |  TEXT   |  NULL  |  no  |     at 我消息 uuid 列表     |
-| isTop           |  TEXT   |  NULL  |      |          是否置顶           |
-| isMute          |  TEXT   |  NULL  |      |          是否静音           |
-| memberLimit     |  TEXT   |  NULL  |      |                             |
-| isStar          |  TEXT   |  NULL  |      |        是否星标好友         |
-| lastMessageUUID |  TEXT   |  NULL  |      |      最后一条消息 uuid      |
-| unreadCount     |  TEXT   |  NULL  |      |           未读数            |
-| lastReactTime   | INTEGER |  NULL  |      |   最后一条消息时间 stime    |
-| isDeleted       |  TEXT   |  NULL  |      |          是否隐藏           |
-| UNIQUE          |         |        |      | 唯一约束 hid 和当前登录 hid |
+| 会话表           |  类型   | 默认值 | 废弃 |            描述             |
+| ---------------- | :-----: | :----: | :--: | :-------------------------: |
+| id               | INTEGER |  KEY   |      |             KEY             |
+| hostId           |  TEXT   |   ''   |      |           本人 ID           |
+| hid              |  TEXT   |   ''   |      |           会话 id           |
+| ~~enterpriseId~~ |  TEXT   |  NULL  |      |       空间 id（废弃）       |
+| ~~myBlock~~      |  TEXT   |  NULL  |      |      被我拉黑的人列表       |
+| remindlist       |  TEXT   |  NULL  |  no  |     at 我消息 uuid 列表     |
+| isTop            |  TEXT   |  NULL  |      |          是否置顶           |
+| isMute           |  TEXT   |  NULL  |      |          是否静音           |
+| ~~memberLimit~~  |  TEXT   |  NULL  |      |    成员限制（成员列表）     |
+| ~~isStar~~       |  TEXT   |  NULL  |      |        是否星标好友         |
+| lastMessageUUID  |  TEXT   |  NULL  |      |      最后一条消息 uuid      |
+| unreadCount      |  TEXT   |  NULL  |      |           未读数            |
+| lastReactTime    | INTEGER |  NULL  |      |   最后一条消息时间 stime    |
+| isDeleted        |  TEXT   |  NULL  |      |          是否隐藏           |
+| UNIQUE           |         |        |      | 唯一约束 hid 和当前登录 hid |
 
 ```
 CREATE TABLE session(
@@ -88,47 +90,47 @@ CREATE TABLE session(
 
 #### **message**
 
-| 消息表             |  类型   | 默认值 | 废弃 |                            描述                             |
-| ------------------ | :-----: | :----: | :--: | :---------------------------------------------------------: |
-| id                 | INTEGER |  KEY   |      |                             KEY                             |
-| filelisttype       | INTEGER |  NULL  |      | 消息文件分类（1:图片 11 图片未下载完成状态 2:文件 3:link）  |
-| hostId             |  TEXT   |   ''   |      |                          个人 hid                           |
-| c                  |  TEXT   |  NULL  |      |                 发送消息类型（HyperText、）                 |
-| t                  |  TEXT   |  NULL  |      |                         接收方 hid                          |
-| m                  |  TEXT   |  NULL  |      |                      消息内容主体部分                       |
-| dialogId           |  TEXT   |  NULL  |      |                         所属会话 ID                         |
-| peerId             |  TEXT   |  NULL  |      |                          所属人 ID                          |
-| expire             |  TEXT   |  NULL  |      |                                                             |
-| isMine             |  TEXT   |  NULL  |      |                  是否是我的消息（1、NULL）                  |
-| messageType        |  TEXT   |  NULL  |      |                 消息所属类型（user、group）                 |
-| MIMETYPE           |  TEXT   |  NULL  |      |                  消息类型 （text/plain ）                   |
-| ctime              | INTEGER |  NULL  |      |                    消息时间戳（服务端）                     |
-| stime              | INTEGER |  NULL  |      |                     消息时间戳(客户端)                      |
-| uuid               |  TEXT   |   ''   |      |                           消息 ID                           |
-| body               |  TEXT   |  NULL  |      |                          消息内容                           |
-| meta               |  TEXT   |  NULL  |      |              消息媒体信息（已读、表情、引用）               |
-| messageStatus      | INTEGER |  NULL  |      |                   1 失败 其它情况视为成功                   |
-| filename           |  TEXT   |  NULL  |      |                          文件名称                           |
-| isStar             |  TEXT   |  NULL  |      |         表示失败意思 改为 efailed 标识消息是否失败          |
-| docId              |  TEXT   |  NULL  |  no  |                                                             |
-| isNeedUpdateFTS    |  TEXT   |  NULL  |  no  |                   批量更新索引表优化性能                    |
-| isDeleted          |  TEXT   |  NULL  |      |                  是否隐藏（1 隐藏、NULL）                   |
-| assertType         |         |  NULL  |      |                    1 file 2 image 3 link                    |
-| finishTime         | INTEGER |  NULL  |      |                      文件下载完成时间                       |
-| assertPath         |  TEXT   |  NULL  |      |                        文件协议路径                         |
-| fileFragmentMap    |  TEXT   |   {}   |      |                  文件分片 map 用于恢复进度                  |
-| content            |  TEXT   |  NULL  |      |                      消息体的全部内容                       |
-| mcFrom             |  TEXT   |  NULL  |      |                     接收方（空间+hid）                      |
-| mcTo               |  TEXT   |  NULL  |      |                     接收方（空间+hid）                      |
-| uuidRepliedRoot    |  TEXT   |  NULL  |      |               reply 引用指向消息的（ UUID ）                |
-| f                  |  TEXT   |  NULL  |      |                      发送方（hostId）                       |
-| s                  |  TEXT   |  NULL  |      |                          接收方 id                          |
-| stickerRepliedList |  TEXT   |  NULL  |  no  |                    获取表情回复字段列表                     |
-| pinnedInfo         |  TEXT   |  NULL  |  no  |                                                             |
-| binaryPart         |  TEXT   |  NULL  |      |                        文件二进制流                         |
-| unreadReceipt      |  TEXT   |  NULL  |      | 已读状态（0 未读、1 【部分、已发送】、2 已读、NULL 不展示） |
-| receiptShow        |  TEXT   | 'show' |      |                  是否展示已读（show、hid）                  |
-| UNIQUE             |         |        |      |                         hostId,uuid                         |
+| 消息表                 |  类型   | 默认值 | 废弃 |                            描述                             |
+| ---------------------- | :-----: | :----: | :--: | :---------------------------------------------------------: |
+| id                     | INTEGER |  KEY   |      |                             KEY                             |
+| filelisttype           | INTEGER |  NULL  |      | 消息文件分类（1:图片 11 图片未下载完成状态 2:文件 3:link）  |
+| hostId                 |  TEXT   |   ''   |      |                          个人 hid                           |
+| c                      |  TEXT   |  NULL  |      |                 发送消息类型（HyperText、）                 |
+| t                      |  TEXT   |  NULL  |      |                         接收方 hid                          |
+| m                      |  TEXT   |  NULL  |      |                      消息内容主体部分                       |
+| dialogId               |  TEXT   |  NULL  |      |                         所属会话 ID                         |
+| peerId                 |  TEXT   |  NULL  |      |                          所属人 ID                          |
+| expire                 |  TEXT   |  NULL  |      |                                                             |
+| isMine                 |  TEXT   |  NULL  |      |                  是否是我的消息（1、NULL）                  |
+| messageType            |  TEXT   |  NULL  |      |                 消息所属类型（user、group）                 |
+| MIMETYPE               |  TEXT   |  NULL  |      |                  消息类型 （text/plain ）                   |
+| ctime                  | INTEGER |  NULL  |      |                    消息时间戳（服务端）                     |
+| stime                  | INTEGER |  NULL  |      |                     消息时间戳(客户端)                      |
+| uuid                   |  TEXT   |   ''   |      |                           消息 ID                           |
+| body                   |  TEXT   |  NULL  |      |                          消息内容                           |
+| meta                   |  TEXT   |  NULL  |      |              消息媒体信息（已读、表情、引用）               |
+| ~~messageStatus~~      | INTEGER |  NULL  |      |                   1 失败 其它情况视为成功                   |
+| ~~filename~~           |  TEXT   |  NULL  |      |                          文件名称                           |
+| isStar                 |  TEXT   |  NULL  |      |         表示失败意思 改为 efailed 标识消息是否失败          |
+| ~~docId~~              |  TEXT   |  NULL  |  no  |                                                             |
+| ~~isNeedUpdateFTS~~    |  TEXT   |  NULL  |  no  |                   批量更新索引表优化性能                    |
+| ~~isDeleted~~          |  TEXT   |  NULL  |      |                  是否隐藏（1 隐藏、NULL）                   |
+| ~~assertType~~         |         |  NULL  |      |                    1 file 2 image 3 link                    |
+| ~~finishTime~~         | INTEGER |  NULL  |      |                      文件下载完成时间                       |
+| assertPath             |  TEXT   |  NULL  |      |                        文件协议路径                         |
+| fileFragmentMap        |  TEXT   |   {}   |      |                  文件分片 map 用于恢复进度                  |
+| content                |  TEXT   |  NULL  |      |                      消息体的全部内容                       |
+| mcFrom                 |  TEXT   |  NULL  |      |                     接收方（空间+hid）                      |
+| mcTo                   |  TEXT   |  NULL  |      |                     接收方（空间+hid）                      |
+| ~~uuidRepliedRoot      |  TEXT   |  NULL  |      |               reply 引用指向消息的（ UUID ）                |
+| f                      |  TEXT   |  NULL  |      |                      发送方（hostId）                       |
+| s                      |  TEXT   |  NULL  |      |                          接收方 id                          |
+| ~~stickerRepliedList~~ |  TEXT   |  NULL  |  no  |                    获取表情回复字段列表                     |
+| ~~pinnedInfo~~         |  TEXT   |  NULL  |  no  |                                                             |
+| binaryPart             |  TEXT   |  NULL  |      |                        文件二进制流                         |
+| unreadReceipt          |  TEXT   |  NULL  |      | 已读状态（0 未读、1 【部分、已发送】、2 已读、NULL 不展示） |
+| receiptShow            |  TEXT   | 'show' |      |                  是否展示已读（show、hid）                  |
+| UNIQUE                 |         |        |      |                         hostId,uuid                         |
 
 ```
 CREATE TABLE message(
@@ -503,3 +505,63 @@ CREATE TABLE 'IndexTable_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHO
 | KEY            |  TEXT   |  NULL  |      |      |
 
 <!-- tabs:end -->
+
+## ackdb.enc
+
+| 消息缓存    |  类型   | 默认值 | 废弃 |            描述             |
+| ----------- | :-----: | :----: | :--: | :-------------------------: |
+| id          | INTEGER |  KEY   |      |             KEY             |
+| key         |  TEXT   |   ''   |      |           本人 ID           |
+| tempMessage |  TEXT   |   ''   |      |           会话 id           |
+| stime       | INTEGER |  NULL  |      |   最后一条消息时间 stime    |
+| p           |  TEXT   |  NULL  |      |          是否隐藏           |
+| UNIQUE      |         |        |      | 唯一约束 hid 和当前登录 hid |
+
+## user.enc
+
+| customer |  类型   | 默认值 | 废弃 |            描述             |
+| -------- | :-----: | :----: | :--: | :-------------------------: |
+| id       | INTEGER |  KEY   |      |             KEY             |
+| hostId   |  TEXT   |   ''   |      |           本人 ID           |
+| content  |  TEXT   |   ''   |      |           会话 id           |
+| UNIQUE   |         |        |      | 唯一约束 hid 和当前登录 hid |
+
+downloadfilemap
+id
+hostId
+uuid
+downloadpath
+
+downloadsetting
+id
+hid
+hostId
+remaind
+isRemainded
+noSpaceRemainded
+defalutPath
+
+ftsmigration
+spaceId
+currentRowld
+maxRowId
+isFinish
+
+needping
+id
+hostId
+peerId
+spaceId
+
+setting
+id
+hid
+spaceId
+hostId
+privateChats
+channels
+autoconnectedAudio
+showingPreview
+content
+videoCheck
+usePersonalRoom

@@ -126,6 +126,45 @@
       padding-top: 10px;
     }
   </style>
+  <!-- tipsTitle -->
+  <style>
+    #tooltip {
+      font-size: 12px;
+      position: absolute;
+      padding: 5px;
+      z-index: 100000;
+      opacity: .8;
+      font-family: Microsoft Yahei
+    }
+
+    #tooltip .tipsy-arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      line-height: 0;
+      border: 6px dashed #000;
+      top: 0;
+      left: 20%;
+      margin-left: -5px;
+      border-bottom-style: solid;
+      border-top: 0;
+      border-left-color: transparent;
+      border-right-color: transparent
+    }
+
+    #tooltip .tipsy-arrow-n {
+      border-bottom-color: #000
+    }
+
+    #tooltip .tipsy-inner {
+      background-color: #000;
+      color: #FFF;
+      max-width: 200px;
+      padding: 5px 8px 4px 8px;
+      text-align: center;
+      border-radius: 3px
+    }
+  </style>
 </head>
 
 <body>
@@ -136,9 +175,9 @@
     window.$docsify = {
       // coverpage: true,
       loadSidebar: true,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-      },
+      // alias: {
+      //   '/.*/_sidebar.md': '/_sidebar.md',
+      // },
       subMaxLevel: 3,
       sidebarDisplayLevel: 1,
       subMaxLevel: 4,
@@ -246,8 +285,8 @@
         //   });
         // },
         // github editHtml
-        // function(hook, vm) {
-        //   hook.beforeEach(function(html) {
+        // function (hook, vm) {
+        //   hook.beforeEach(function (html) {
         //     var url =
         //       'https://github.com/luuman/newDoc/blob/gh-page/docs/' +
         //       vm.route.file;
@@ -261,6 +300,84 @@
         //     );
         //   });
         // },
+        // TipTitle
+        function (hook, vm) {
+          hook.ready(function () {
+            var clipboard = new ClipboardJS('p', {
+              text: function (trigger) {
+                return trigger.getAttribute('title');
+              }
+            });
+            clipboard.on('success', function (e) {
+              console.info('Action:', e.action);
+              console.info('Text:', e.text);
+              console.info('Trigger:', e.trigger);
+              e.clearSelection();
+            });
+            clipboard.on('error', function (e) {
+              console.error('Action:', e.action);
+              console.error('Trigger:', e.trigger);
+            });
+            var sweetTitles = {
+              x: 10,
+              y: 20,
+              tipElements: "a",
+              init: function (tipElements) {
+                $(tipElements || this.tipElements).unbind("mouseover mouseout mousemove"); //移除之前绑定的时间防止冲突
+                $('#tooltip').remove(); //pjax后防止提示未消失
+                $(tipElements || this.tipElements).mouseover(function (e) {
+                  this.myTitle = this.title;
+                  this.click(() => {
+                    console.log('sdafdsf', this.myTitle);
+                    document.execCommand(this.myTitle);
+                  })
+                  console.log('sdafdsf', this.myTitle);
+                  document.execCommand(this.myTitle);
+                  var text = document.getElementById("text").innerText;
+                  var input = document.getElementById("input");
+                  input.value = this.myTitle; // 修改文本框的内容
+                  input.select(); // 选中文本
+                  document.execCommand("copy"); // 执行浏览器复制命令
+                  // this.myHref = this.href;
+                  // this.myHref = (this.myHref.length > 200 ? this.myHref.toString().substring(0, 200) + "..." : this.myHref);
+                  this.title = "";
+                  var tooltip = "";
+                  if (this.myTitle == "") {
+                    tooltip = "";
+                  }
+                  else {
+                    tooltip = "<div id='tooltip'><div class='tipsy-arrow'></div><div class='tipsy-inner'>" + this.myTitle + "</div></div>";
+                    $('body').append(tooltip);
+                    $('#tooltip')
+                      .css({
+                        "opacity": "0.9",
+                        "top": (e.pageY + 20) + "px",
+                        "left": (e.pageX + 10) + "px"
+                      }).show('fast');
+                  }
+
+                }).mouseout(function () {
+                  if (this.myTitle != "") {
+                    this.title = this.myTitle;
+                    $('#tooltip').remove();
+                  }
+                }).mousemove(function (e) {
+                  if (this.myTitle != "") {
+                    $('#tooltip')
+                      .css({
+                        "top": (e.pageY + 20) + "px",
+                        "left": (e.pageX + 10) + "px"
+                      });
+                  }
+                });
+              }
+            };
+            $(function () {
+              sweetTitles.init('a[title]'); //初始化
+              sweetTitles.init('p[title]'); //初始化
+            });
+          })
+        },
         // icon ☑ ☒ 已读未读
         // function(hook, vm) {
         //   hook.beforeEach(function(html) {
@@ -322,7 +439,10 @@
   </script>
   <!-- three.min.js -->
   <!-- <script src='./js/coverpage/three.min.js'></script> -->
+  <script src="https://www.ilt.me/content/templates/lanye/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 
+  <!-- clipboard -->
+  <script src="https://clipboardjs.com/dist/clipboard.min.js" type="text/javascript"></script>
   <!-- docsify -->
   <!-- <script src="https://luuman.github.io/docsify-themeable/assets/js/main.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>

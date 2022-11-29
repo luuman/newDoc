@@ -1,9 +1,14 @@
 - [首页](/)
-- [目录](/router/)
-- [每日一题](/note/)
 - [DB](/note/DB/)
-- [JavaScript](/note/JavaScript/)
+  - [数据库表](/note/DB/DBText)
+  - [DBAPI](/note/DB/DBAPI)
+  - [DB](/note/DB/DB)
+  - [DBText](/note/DB/DBText)
+  - [数据库建立工具](/note/DB/SqliteConnect.md)
+
+<!-- - [JavaScript](/note/JavaScript/)
   - [virtualList](/note/JavaScript/virtualList)
+  - [DBText](/note/JavaScript/DBText)
   - [worker](/note/JavaScript/worker)
   - [quillEdit](/note/JavaScript/quillEdit)
 - [Stock](/note/Stock/)
@@ -20,4 +25,4 @@
   - [receipt](/note/modules/receipt)
 - [Web 会中](/note/meetingControl/)
 - [WebSDK](/note/cstMeeting/)
-  - [技术方案](/note/cstMeeting/TechnicalSolutions)
+  - [技术方案](/note/cstMeeting/TechnicalSolutions) -->
