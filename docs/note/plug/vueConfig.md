@@ -80,20 +80,22 @@
 
 ## pages
 
-| 文件名称              | 描述         | 入口                                   | 模板                              | 输出名称                   |
-| --------------------- | ------------ | -------------------------------------- | --------------------------------- | -------------------------- |
-| start                 | SDK 通信     | renderer/start/main.js                 | public/start.html                 | start.html                 |
-| index                 | 主渲染进程   | renderer/src/main.js                   | public/index.html                 | index.html                 |
-| meetingInfo           | 会议信息     | renderer/meetingInfo/main.js           | public/meetingInfo.html           | meetingInfo.html           |
-| callfeedback          | 反馈窗口     | renderer/callfeedback/main.js          | public/callfeedback.html          | callfeedback.html          |
-| toast                 |              | renderer/toast/index.js                | public/toast.html                 | toast.html                 |
-| screenshot            | 截图窗口     | renderer/screenshot/main.js            | public/screenshot.html            | screenshot.html            |
-| pictureViewer         | 图片查看窗口 | renderer/pictureViewer/main.js         | public/pictureViewer.html         | pictureViewer.html         |
-| fileViewer            | 文件查看窗口 | renderer/fileViewer/main.js            | public/fileViewer.html            | fileViewer.html            |
-| meetingInvite         | 会议邀请窗口 | renderer/meetingInvite/main.js         | public/meetingInvite.html         | meetingInvite.html         |
-| deleteAccountFeedback | 删除账号窗口 | renderer/deleteAccountFeedback/main.js | public/deleteAccountFeedback.html | deleteAccountFeedback.html |
-| sso                   | SSO 窗口     | renderer/sso/index.js                  | public/sso.html                   | sso.html                   |
-| meetingPwd            | 会议密码窗口 | renderer/meetingPwd/index.js           | public/meetingPwd.html            | meetingPwd.html            |
+| 文件名称              | 窗口描述         | 入口                                   | 模板                              | 输出名称                   |
+| --------------------- | ---------------- | -------------------------------------- | --------------------------------- | -------------------------- |
+| start                 | SDK 通信         | renderer/start/main.js                 | public/start.html                 | start.html                 |
+| index                 | 主渲染进程       | renderer/src/main.js                   | public/index.html                 | index.html                 |
+| meetingInfo           | 会议信息         | renderer/meetingInfo/main.js           | public/meetingInfo.html           | meetingInfo.html           |
+| callfeedback          | 通话质量反馈     | renderer/callfeedback/main.js          | public/callfeedback.html          | callfeedback.html          |
+| toast                 | 全局提示         | renderer/toast/index.js                | public/toast.html                 | toast.html                 |
+| screenshot            | 截屏截图         | renderer/screenshot/main.js            | public/screenshot.html            | screenshot.html            |
+| pictureViewer         | 图片查看器       | renderer/pictureViewer/main.js         | public/pictureViewer.html         | pictureViewer.html         |
+| fileViewer            | 音视频文件查看器 | renderer/fileViewer/main.js            | public/fileViewer.html            | fileViewer.html            |
+| meetingInvite         | 会议邀请         | renderer/meetingInvite/main.js         | public/meetingInvite.html         | meetingInvite.html         |
+| deleteAccountFeedback | 删除账号反馈     | renderer/deleteAccountFeedback/main.js | public/deleteAccountFeedback.html | deleteAccountFeedback.html |
+| sso                   | 登录 SSO         | renderer/sso/index.js                  | public/sso.html                   | sso.html                   |
+| meetingPwd            | 会议密码         | renderer/meetingPwd/index.js           | public/meetingPwd.html            | meetingPwd.html            |
+
+[多窗口梳理](https://wiki.corp.matrx.team/pages/viewpage.action?pageId=32536616)
 
 ## vue.config.js
 

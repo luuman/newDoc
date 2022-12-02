@@ -302,8 +302,8 @@
         // },
         // TipTitle
         function (hook, vm) {
-          hook.ready(function () {
-            var clipboard = new ClipboardJS('p', {
+          hook.doneEach(function () {
+            var clipboard = new ClipboardJS('i', {
               text: function (trigger) {
                 return trigger.getAttribute('title');
               }
@@ -327,19 +327,6 @@
                 $('#tooltip').remove(); //pjax后防止提示未消失
                 $(tipElements || this.tipElements).mouseover(function (e) {
                   this.myTitle = this.title;
-                  this.click(() => {
-                    console.log('sdafdsf', this.myTitle);
-                    document.execCommand(this.myTitle);
-                  })
-                  console.log('sdafdsf', this.myTitle);
-                  document.execCommand(this.myTitle);
-                  var text = document.getElementById("text").innerText;
-                  var input = document.getElementById("input");
-                  input.value = this.myTitle; // 修改文本框的内容
-                  input.select(); // 选中文本
-                  document.execCommand("copy"); // 执行浏览器复制命令
-                  // this.myHref = this.href;
-                  // this.myHref = (this.myHref.length > 200 ? this.myHref.toString().substring(0, 200) + "..." : this.myHref);
                   this.title = "";
                   var tooltip = "";
                   if (this.myTitle == "") {
@@ -374,7 +361,7 @@
             };
             $(function () {
               sweetTitles.init('a[title]'); //初始化
-              sweetTitles.init('p[title]'); //初始化
+              sweetTitles.init('i[title]'); //初始化
             });
           })
         },
