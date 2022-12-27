@@ -1,0 +1,3 @@
+- [Index](/)
+- [editorconfig](/note/plug/editorconfig)
+- [打包命令](/note/plug/vueConfig)

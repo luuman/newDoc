@@ -5,7 +5,7 @@
 | ![assets/](/router/src/assets/)                | 静态资源 |          | 待完善 :punch: |
 | ![buildConfig/](/router/src/buildConfig/)      | 打包配置 |          | 待完善 :punch: |
 | [components/](/router/src/components/)         | 公共组件 |          | 待完善 :punch: |
-| ![config/](/router/src/config/)                |          |          | 待完善 :punch: |
+| [config/](/router/src/config/)                 |          |          | 待完善 :punch: |
 | [dataController/](/router/src/dataController/) |          |          | 待完善 :punch: |
 | ![directive/](/router/src/directive/)          |          |          | 待完善 :punch: |
 | ![enum/](/router/src/enum/)                    |          |          | 待完善 :punch: |

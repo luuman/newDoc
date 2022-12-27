@@ -120,30 +120,31 @@ msg： {
 
 > MIMETYPE
 
-| MIMETYPE                        | 描述                                                         |
-| ------------------------------- | ------------------------------------------------------------ |
-| text/plain                      | [文本消息](/note/newDate/ImDate?id=文本消息)                 |
-| image/\*                        | [图片消息](/note/newDate/ImDate?id=图片消息)                 |
-|                                 | image/jpeg                                                   |
-|                                 | image/webp                                                   |
-|                                 | image/jpg                                                    |
-|                                 | image/gif                                                    |
-|                                 | image/png                                                    |
-|                                 | image/bmp                                                    |
-| x-filetransfer/octet-stream     | [文件消息](/note/newDate/ImDate?id=文件消息)                 |
-| application/eliminate           | [被动撤回消息](/note/newDate/ImDate?id=被动撤回消息)         |
-| application/withdraw            | [撤回类型消息](/note/newDate/ImDate?id=撤回类型消息)         |
-| application/receipt             | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
-| application/receipt/count       | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
-| application/pin                 | [Pin](/note/newDate/ImDate?id=Pin)                           |
-| application/sticker-replied     | [表情回复类型消息](/note/newDate/ImDate?id=表情回复类型消息) |
-| application/restricted          | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
-| application/sticker             | [表情回复类型消息](/note/newDate/ImDate?id=表情回复类型消息) |
-| text/vcard                      | [卡片消息](/note/newDate/ImDate?id=卡片消息)                 |
-| meeting/card                    | [会议卡片消息](/note/newDate/ImDate?id=会议卡片消息)         |
-| audio/voice-msg                 | [语音消息](/note/newDate/ImDate?id=语音消息)                 |
-| call/record                     | [语音呼叫消息](/note/newDate/ImDate?id=语音呼叫消息)         |
-|                                 |                                                              |
+| MIMETYPE                    | 描述                                                         |
+| --------------------------- | ------------------------------------------------------------ |
+| text/plain                  | [文本消息](/note/newDate/ImDate?id=文本消息)                 |
+| image/\*                    | [图片消息](/note/newDate/ImDate?id=图片消息)                 |
+|                             | image/jpeg                                                   |
+|                             | image/webp                                                   |
+|                             | image/jpg                                                    |
+|                             | image/gif                                                    |
+|                             | image/png                                                    |
+|                             | image/bmp                                                    |
+| x-filetransfer/octet-stream | [文件消息](/note/newDate/ImDate?id=文件消息)                 |
+| application/eliminate       | [被动撤回消息](/note/newDate/ImDate?id=被动撤回消息)         |
+| application/withdraw        | [撤回类型消息](/note/newDate/ImDate?id=撤回类型消息)         |
+| application/receipt         | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
+| application/receipt/count   | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
+| application/pin             | [Pin](/note/newDate/ImDate?id=Pin)                           |
+| application/sticker-replied | [表情回复类型消息](/note/newDate/ImDate?id=表情回复类型消息) |
+| application/restricted      | [回执类型消息](/note/newDate/ImDate?id=回执类型消息)         |
+| application/sticker         | [表情回复类型消息](/note/newDate/ImDate?id=表情回复类型消息) |
+| text/vcard                  | [卡片消息](/note/newDate/ImDate?id=卡片消息)                 |
+| meeting/card                | [会议卡片消息](/note/newDate/ImDate?id=会议卡片消息)         |
+| audio/voice-msg             | [语音消息](/note/newDate/ImDate?id=语音消息)                 |
+| call/record                 | [语音呼叫消息](/note/newDate/ImDate?id=语音呼叫消息)         |
+
+<!-- |                                 |                                                              |
 | text/namecard                   |                                                              |
 | application/location            |                                                              |
 | application/redenvelope         |                                                              |
@@ -157,74 +158,74 @@ msg： {
 | application/otc-order           |                                                              |
 | application/otc-contract        |                                                              |
 | application/arbitration         |                                                              |
-| application/otc-contract-event  |                                                              |
+| application/otc-contract-event  |                                                              | -->
 
-| name                    | 类型 | 文本 | 卡片 | 会议 | 图片 | 文件 | Pin | 语音 | 呼叫 | 撤回 | 表情 | 回执 | 描述                 |
-| ----------------------- | ---- | ---- | ---- | ---- | ---- | ---- | --- | ---- | ---- | ---- | ---- | ---- | -------------------- |
-| a                       | `N`  |      |      |      |      |      |     |      |      |      |      |      | [a]                  |
-| binaryPart              | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  | [binaryPart]         |
-| c                       | `S`  |      |      |      |      |      |     |      |      |      |      |      | [c]                  |
-| expire                  | `N`  |      |      |      |      |      |     |      |      |      |      |      | [expire]             |
-| f                       | `S`  |      |      |      |      |      |     |      |      |      |      |      | [f]                  |
-| knownIfToOff            | `B`  |      |      | :x:  |      |      |     |      |      | :x:  |      | :x:  | [knownIfToOff]       |
-| isSyncFrom              | `B`  | :x:  | :x:  |      | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [isSyncFrom]         |
-| l                       | `N`  |      |      |      |      |      |     |      |      |      |      |      | [l]                  |
-| m                       | `O`  |      |      |      |      |      |     |      |      |      |      |      | [m]                  |
-| :o: MIMETYPE            | `S`  |      |      |      |      |      |     |      |      |      |      |      | [MIMETYPE]           |
-| :o: body                | `S`  |      | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  |      | :x:  | :x:  | [body]               |
-| :o: ctime               | `N`  |      |      |      |      |      |     |      |      |      |      |      | [ctime]              |
-| :o: deviceId            | `N`  | :x:  | :x:  |      | :x:  | :x:  | :x: |      |      | :x:  | :x:  | :x:  | [deviceId]           |
-| :o: flags               | `N`  |      |      |      |      |      | :x: |      |      |      |      |      | [flags]              |
-| :o: isE2EE              | `B`  | :x:  | :x:  |      | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [isE2EE]             |
-| :o: meta                | `O`  | :x:  |      | `S`  |      |      |     |      |      |      | :x:  |      | [meta]               |
-| :o2: contactUid         | `S`  | :x:  |      | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [contactUid]         |
-| :o2: codec              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  | [codec]              |
-| :o2: duration           | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  | [duration]           |
-| :o2: maxframe           | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  | [maxframe]           |
-| :o2: nickName           | `S`  | :x:  |      | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [nickName]           |
-| :o2: download           | `O`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [download]           |
-| :o2: -fid               | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [fid]                |
-| :o2: -sha256            | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [sha256]             |
-| :o2: -size              | `N`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [size]               |
-| :o2: -url               | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [url]                |
-| :o2: filename           | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [filename]           |
-| :o2: h                  | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [h]                  |
-| :o2: hmacKey            | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [hmacKey]            |
-| :o2: iKey               | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [iKey]               |
-| :o2: pinnedInfo         | `O`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [pinnedInfo]         |
-| :o2: -operation         | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [operation]          |
-| :o2: -pname             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [pname]              |
-| :o2: -ptime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [ptime]              |
-| :o2: -stime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [stime]              |
-| :o2: -uuid              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  | [uuid]               |
-| :o2: isOrigin           | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [isOrigin]           |
-| :o2: originSha256       | `N`  | :x:  | :x:  | :x:  | :x:  |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [originSha256]       |
-| :o2: origUUID           | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  |      | :x:  |      | [origUUID]           |
-| :o2: origMimeType       | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      | [origMimeType]       |
-| :o2: receiptInfo        | `A`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      | [receiptInfo]        |
-| :o2: -rstime            | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      | [rstime]             |
-| :o2: -ruuid             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      | [ruuid]              |
-| :o2: type               | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      | [type]               |
-| :o2: w                  | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  | [w]                  |
-| :o2: stickerRepliedInfo | `O`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [stickerRepliedInfo] |
-| :o2: -operation         | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [operation]          |
-| :o2: -rname             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [rname]              |
-| :o2: -rtime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [rtime]              |
-| :o2: -sticker           | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [sticker]            |
-| :o2: -uuid              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [uuid]               |
-| :o: nf                  | `N`  |      |      |      |      |      |     |      |      |      | :x:  | :x:  | [nf]                 |
-| :o: receipt             | `N`  |      |      |      |      |      | :x: |      |      |      |      | :x:  | [receipt]            |
-| :o: si                  | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  |      | :x:  | [si]                 |
-| :o: stime               | `N`  |      |      |      |      |      |     |      |      |      |      |      | [stime]              |
-| :o: uuid                | `S`  |      |      |      |      |      |     |      |      |      |      |      | [uuid]               |
-| mcFrom                  | `S`  |      |      |      |      |      |     |      |      |      |      |      | [mcFrom]             |
-| mcTo                    | `S`  |      |      |      |      |      |     |      |      |      |      |      | [mcTo]               |
-| meFrom                  | `S`  |      |      |      |      |      |     |      |      |      |      |      | [meFrom]             |
-| meTo                    | `S`  |      |      |      |      |      |     |      |      |      |      |      | [meTo]               |
-| needAck                 | `S`  |      |      |      |      |      |     |      |      |      |      |      | [needAck]            |
-| noDisturb               | `S`  |      |      | :x:  |      |      |     |      |      | :x:  |      |      | [noDisturb]          |
-| s                       | `S`  |      |      | :x:  |      |      |     |      |      | :x:  |      |      | [s]                  |
-| t                       | `S`  |      |      |      |      |      |     |      |      |      |      |      | [t]                  |
+| name                    | 类型 | 文本 | 卡片 | 会议 | 图片 | 文件 | Pin | 语音 | 呼叫 | 撤回 | 表情 | 回执 |            描述            |
+| ----------------------- | :--: | :--: | :--: | :--: | :--: | :--: | :-: | :--: | :--: | :--: | :--: | :--: | :------------------------: |
+| a                       | `N`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][a]          |
+| binaryPart              | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  |     [注释][binarypart]     |
+| c                       | `S`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][c]          |
+| expire                  | `N`  |      |      |      |      |      |     |      |      |      |      |      |       [注释][expire]       |
+| f                       | `S`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][f]          |
+| knownIfToOff            | `B`  |      |      | :x:  |      |      |     |      |      | :x:  |      | :x:  |    [注释][knowniftooff]    |
+| isSyncFrom              | `B`  | :x:  | :x:  |      | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |     [注释][issyncfrom]     |
+| l                       | `N`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][l]          |
+| m                       | `O`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][m]          |
+| :o: MIMETYPE            | `S`  |      |      |      |      |      |     |      |      |      |      |      |      [注释][mimetype]      |
+| :o: body                | `S`  |      | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  |      | :x:  | :x:  |        [注释][body]        |
+| :o: ctime               | `N`  |      |      |      |      |      |     |      |      |      |      |      |       [注释][ctime]        |
+| :o: deviceId            | `N`  | :x:  | :x:  |      | :x:  | :x:  | :x: |      |      | :x:  | :x:  | :x:  |      [注释][deviceid]      |
+| :o: flags               | `N`  |      |      |      |      |      | :x: |      |      |      |      |      |       [注释][flags]        |
+| :o: isE2EE              | `B`  | :x:  | :x:  |      | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |       [注释][ise2ee]       |
+| :o: meta                | `O`  | :x:  |      | `S`  |      |      |     |      |      |      | :x:  |      |        [注释][meta]        |
+| :o2: contactUid         | `S`  | :x:  |      | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |     [注释][contactuid]     |
+| :o2: codec              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  |       [注释][codec]        |
+| :o2: duration           | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  |      [注释][duration]      |
+| :o2: maxframe           | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: |      | :x:  | :x:  | :x:  | :x:  |      [注释][maxframe]      |
+| :o2: nickName           | `S`  | :x:  |      | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |      [注释][nickname]      |
+| :o2: download           | `O`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |      [注释][download]      |
+| :o2: -fid               | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |        [注释][fid]         |
+| :o2: -sha256            | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |       [注释][sha256]       |
+| :o2: -size              | `N`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |        [注释][size]        |
+| :o2: -url               | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |        [注释][url]         |
+| :o2: filename           | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |      [注释][filename]      |
+| :o2: h                  | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |         [注释][h]          |
+| :o2: hmacKey            | `S`  | :x:  | :x:  | :x:  |      |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |      [注释][hmackey]       |
+| :o2: iKey               | `S`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |        [注释][ikey]        |
+| :o2: pinnedInfo         | `O`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |     [注释][pinnedinfo]     |
+| :o2: -operation         | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |     [注释][operation]      |
+| :o2: -pname             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |       [注释][pname]        |
+| :o2: -ptime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |       [注释][ptime]        |
+| :o2: -stime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |       [注释][stime]        |
+| :o2: -uuid              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  | :x:  | :x:  |        [注释][uuid]        |
+| :o2: isOrigin           | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |      [注释][isorigin]      |
+| :o2: originSha256       | `N`  | :x:  | :x:  | :x:  | :x:  |      | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |    [注释][originsha256]    |
+| :o2: origUUID           | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  |      | :x:  |      |      [注释][origuuid]      |
+| :o2: origMimeType       | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      |    [注释][origmimetype]    |
+| :o2: receiptInfo        | `A`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      |    [注释][receiptinfo]     |
+| :o2: -rstime            | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      |       [注释][rstime]       |
+| :o2: -ruuid             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      |       [注释][ruuid]        |
+| :o2: type               | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  | :x:  |      |        [注释][type]        |
+| :o2: w                  | `N`  | :x:  | :x:  | :x:  |      | :x:  | :x: | :x:  | :x:  | :x:  | :x:  | :x:  |         [注释][w]          |
+| :o2: stickerRepliedInfo | `O`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  | [注释][stickerrepliedinfo] |
+| :o2: -operation         | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  |     [注释][operation]      |
+| :o2: -rname             | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  |       [注释][rname]        |
+| :o2: -rtime             | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  |       [注释][rtime]        |
+| :o2: -sticker           | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  |      [注释][sticker]       |
+| :o2: -uuid              | `S`  | :x:  | :x:  | :x:  | :x:  | :x:  | :x: | :x:  | :x:  | :x:  |      | :x:  |        [注释][uuid]        |
+| :o: nf                  | `N`  |      |      |      |      |      |     |      |      |      | :x:  | :x:  |         [注释][nf]         |
+| :o: receipt             | `N`  |      |      |      |      |      | :x: |      |      |      |      | :x:  |      [注释][receipt]       |
+| :o: si                  | `N`  | :x:  | :x:  | :x:  | :x:  | :x:  |     | :x:  | :x:  | :x:  |      | :x:  |         [注释][si]         |
+| :o: stime               | `N`  |      |      |      |      |      |     |      |      |      |      |      |       [注释][stime]        |
+| :o: uuid                | `S`  |      |      |      |      |      |     |      |      |      |      |      |        [注释][uuid]        |
+| mcFrom                  | `S`  |      |      |      |      |      |     |      |      |      |      |      |       [注释][mcfrom]       |
+| mcTo                    | `S`  |      |      |      |      |      |     |      |      |      |      |      |        [注释][mcto]        |
+| meFrom                  | `S`  |      |      |      |      |      |     |      |      |      |      |      |       [注释][mefrom]       |
+| meTo                    | `S`  |      |      |      |      |      |     |      |      |      |      |      |        [注释][meto]        |
+| needAck                 | `S`  |      |      |      |      |      |     |      |      |      |      |      |      [注释][needack]       |
+| noDisturb               | `S`  |      |      | :x:  |      |      |     |      |      | :x:  |      |      |     [注释][nodisturb]      |
+| s                       | `S`  |      |      | :x:  |      |      |     |      |      | :x:  |      |      |         [注释][s]          |
+| t                       | `S`  |      |      |      |      |      |     |      |      |      |      |      |         [注释][t]          |
 
 ```json
 // 消息
@@ -984,27 +985,27 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 | [Contact_Request](/note/newDate/ImDate?id=Contact_Request)                   | 好友请求             |                                                                                                   |
 | [Contact_New](/note/newDate/ImDate?id=Contact_New)                           | 新增好友             |                                                                                                   |
 | [Contact_New_E2EE_FRIEND](/note/newDate/ImDate?id=Contact_New_E2EE_FRIEND)   | 新增 e2e 好友        |                                                                                                   |
-| Contact_Del                                                                  | 删除好友             |                                                                                                   |
-| Contact_Black                                                                | black 好友           |                                                                                                   |
-| Contact_Unblack                                                              | unblack 好友         |                                                                                                   |
-| Contact_Meeting_Invite                                                       | 会议邀请好友         |                                                                                                   |
-| ProfileChanged                                                               | profile 变更         |                                                                                                   |
-| ProfileNameChanged                                                           | profile 名称变更     |                                                                                                   |
-| ProfileSignChanged                                                           | profile 签名变更     |                                                                                                   |
-| ProfilePortraitChanged                                                       | profile 图像变更     |                                                                                                   |
-| StatusChanged                                                                | 用户状态变更         |                                                                                                   |
-| ReqListChanged                                                               | 好友请求列表变更     |                                                                                                   |
-| MuteChanged                                                                  | mute 变更            |                                                                                                   |
-| SilenceChanged                                                               | 静音变更             |                                                                                                   |
-| TopChanged                                                                   | 置顶变更             |                                                                                                   |
+| [Contact_Del](/note/newDate/ImDate?id=Contact_Del)                           | 删除好友             |                                                                                                   |
+| [Contact_Black](/note/newDate/ImDate?id=Contact_Black)                       | black 好友           |                                                                                                   |
+| [Contact_Unblack](/note/newDate/ImDate?id=Contact_Unblack)                   | unblack 好友         |                                                                                                   |
+| [Contact_Meeting_Invite](/note/newDate/ImDate?id=Contact_Meeting_Invite)     | 会议邀请好友         |                                                                                                   |
+| [ProfileChanged](/note/newDate/ImDate?id=ProfileChanged)                     | profile 变更         |                                                                                                   |
+| [ProfileNameChanged](/note/newDate/ImDate?id=ProfileNameChanged)             | profile 名称变更     |                                                                                                   |
+| [ProfileSignChanged](/note/newDate/ImDate?id=ProfileSignChanged)             | profile 签名变更     |                                                                                                   |
+| [ProfilePortraitChanged](/note/newDate/ImDate?id=ProfilePortraitChanged)     | profile 图像变更     |                                                                                                   |
+| [StatusChanged](/note/newDate/ImDate?id=StatusChanged)                       | 用户状态变更         |                                                                                                   |
+| [ReqListChanged](/note/newDate/ImDate?id=ReqListChanged)                     | 好友请求列表变更     |                                                                                                   |
+| [MuteChanged](/note/newDate/ImDate?id=MuteChanged)                           | mute 变更            |                                                                                                   |
+| [SilenceChanged](/note/newDate/ImDate?id=SilenceChanged)                     | 静音变更             |                                                                                                   |
+| [TopChanged](/note/newDate/ImDate?id=TopChanged)                             | 置顶变更             |                                                                                                   |
 | ~ReadChanged~                                                                | 已读变更             |                                                                                                   |
 | [HistoryMsg_Removed](/note/newDate/ImDate?id=HistoryMsg_Removed)             | 会话消息同步         |                                                                                                   |
-| Contact_Enterprise_Add                                                       | 企业添加成员         |                                                                                                   |
-| Contact_Enterprise_Kick 企业移除成员                                         |                      |
+| [Contact_Enterprise_Add](/note/newDate/ImDate?id=Contact_Enterprise_Add)     | 企业添加成员         |                                                                                                   |
+| [Contact_Enterprise_Kick](/note/newDate/ImDate?id=Contact_Enterprise_Kick)   | 企业移除成员         |
 | [PlatformNotice](/note/newDate/ImDate?id=PlatformNotice)                     | 平台消息通知         |                                                                                                   |
 | [ReadChanged](/note/newDate/ImDate?id=ReadChanged)                           | 会话已读             |                                                                                                   |
 | [Meeting_List_Changed](/note/newDate/ImDate?id=Meeting_List_Changed)         | 会议列表信息变更     |                                                                                                   |
-| Account_Del                                                                  | 删除账号             | 同删除好友 Contact_Del 结构一致 type 不同                                                         |
+| [Account_Del](/note/newDate/ImDate?id=Account_Del)                           | 删除账号             | 同删除好友 Contact_Del 结构一致 type 不同                                                         |
 | Enterprise_Member_Changed                                                    | 企业会员变更         | 修改前[Contact_New_E2EE_FRIEND](/note/newDate/ImDate?id=Contact_New_E2EE_FRIEND1)                 |
 |                                                                              |                      | 修改后会员新增变动详情[Contact_New_E2EE_FRIEND](/note/newDate/ImDate?id=Contact_New_E2EE_FRIEND2) |
 | [Idc_Offline_Notification](/note/newDate/ImDate?id=Idc_Offline_Notification) | 跨机房离线推送通知   |                                                                                                   |
@@ -1136,6 +1137,140 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 }
 ```
 
+#### Contact_Del
+
+```json
+
+```
+
+#### Contact_Black
+
+```json
+{
+  "a": 5,
+  "c": "Notification",
+  "expire": 1675259885284,
+  "f": "AAAAAAABT_E",
+  "l": 5184000,
+  "m": {
+    "body": {
+      "contacts": ["AB7TTZQ8djk"],
+      "triggeredBy": "8676579454252601"
+    },
+    "ctime": 1670075885273,
+    "type": "Contact_Black",
+    "uuid": "42b6107e-1ace-4970-a552-9ad908e60617"
+  },
+  "mcTo": "UAE-971-1000000#86213902450255894",
+  "meTo": "86213902450255894#desktop",
+  "needAck": true,
+  "t": "ATJLFmY_aBY"
+}
+```
+
+#### Contact_Unblack
+
+```json
+{
+  "a": 5,
+  "c": "Notification",
+  "expire": 1675259507786,
+  "f": "AAAAAAABT_E",
+  "l": 5184000,
+  "m": {
+    "body": {
+      "contacts": ["AB7TTZQ8djk"],
+      "triggeredBy": "86213902450255894"
+    },
+    "ctime": 1670075507781,
+    "type": "Contact_Unblack",
+    "uuid": "ca3c6656-7037-478f-8743-6a1f91998f9e"
+  },
+  "mcTo": "UAE-971-1000000#86213902450255894",
+  "meTo": "86213902450255894#desktop",
+  "needAck": true,
+  "t": "ATJLFmY_aBY"
+}
+```
+
+#### Contact_Meeting_Invite
+
+```json
+
+```
+
+#### ProfileChanged
+
+```json
+
+```
+
+#### ProfileNameChanged
+
+```json
+
+```
+
+#### ProfileSignChanged
+
+```json
+
+```
+
+#### ProfilePortraitChanged
+
+```json
+
+```
+
+#### StatusChanged
+
+```json
+
+```
+
+#### ReqListChanged
+
+```json
+
+```
+
+#### MuteChanged
+
+```json
+
+```
+
+#### SilenceChanged
+
+```json
+
+```
+
+#### TopChanged
+
+```json
+
+```
+
+#### Contact_Enterprise_Add
+
+```json
+
+```
+
+#### Contact_Enterprise_Kick
+
+```json
+
+```
+
+#### Account_Del
+
+```json
+
+```
+
 #### HistoryMsg_Removed
 
 ```json
@@ -1211,16 +1346,25 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 
 ```json
 {
+  "a": 5,
   "c": "Notification",
-  "f": "+971001",
-  "t": "+86141506345665318",
-  "meTo": "86141506345665318#desktop",
-  "mcTo": "UAE-971-0000001#86141506345665318",
+  "expire": 1675259115766,
+  "f": "AAAAAAAO0Pk",
+  "l": 5184000,
   "m": {
-    "ctime": 1635512191903,
-    "uuid": "d2a122aa-b7b1-40f7-b3e8-d2788918279e",
-    "type": "Meeting_List_Changed"
-  }
+    "body": {
+      "mId": "2156657370",
+      "opType": "end",
+      "uid": "86213902450255894"
+    },
+    "ctime": 1670075115758,
+    "type": "Meeting_List_Changed",
+    "uuid": "31911d81-7fcf-43f5-9194-25c4ad6b56ea"
+  },
+  "mcTo": "UAE-971-1000000#86213902450255894",
+  "meTo": "86213902450255894#desktop",
+  "needAck": true,
+  "t": "ATJLFmY_aBY"
 }
 ```
 
@@ -1303,19 +1447,20 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 
 ```json
 {
-  "meTo": "97183240762957940#desktop",
-  "mcTo": "UAE-971-1000000#97183240762957940",
+  "a": 5,
   "c": "Notification",
-  "t": "+97183240762957940",
-  "f": "+809110",
-  "needAck": true,
+  "expire": 1675258831805,
+  "f": "AAAAAAAMWJY",
+  "l": 5184000,
   "m": {
-    "si": 1,
-    "ctime": 1649226767239,
+    "ctime": 1670074831800,
     "type": "Offline_Msg_End",
-    "uuid": "bf656318-ca9f-4869-9728-97debba3ebaa"
+    "uuid": "c9b1edc7-f3ec-48c0-8f84-aca9ccb3913f"
   },
-  "uuid": "bf656318-ca9f-4869-9728-97debba3ebaa"
+  "mcTo": "UAE-971-1000000#86213902450255894",
+  "meTo": "86213902450255894#desktop",
+  "needAck": true,
+  "t": "ATJLFmY_aBY"
 }
 ```
 
@@ -1774,7 +1919,7 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 
 [a]: /note/newDate/variableName?id=a "通话类型1. 普通通话，2. 多媒体通话（预留）3. 地图通话，4. 涂鸦通话，5. 消息 6. 联系人 7.视频通话"
 [binarypart]: /note/newDate/variableName?id=binaryPart "数据流"
-[c]: /note/newDate/variableName?id=c "消息类型"
+[c]: /note/newDate/variableName?id=c "消息类型 HyperText、Notification、Event、PushReg、PullDetail、ForceClose、StateReport"
 [expire]: /note/newDate/variableName?id=expire "生存时间值"
 [f]: /note/newDate/variableName?id=f "发送方Id"
 [knowniftooff]: /note/newDate/variableName?id=knownIfToOff "123"
@@ -1828,10 +1973,10 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
 [si]: /note/newDate/variableName?id=si "123"
 [stime]: /note/newDate/variableName?id=stime "服务端时间戳"
 [uuid]: /note/newDate/variableName?id=uuid "消息ID"
-[mcfrom]: /note/newDate/variableName?id=mcFrom "空间ID + 发送方"
-[mcto]: /note/newDate/variableName?id=mcTo "空间ID + 接收方"
-[mefrom]: /note/newDate/variableName?id=meFrom "端 + 发送方"
-[meto]: /note/newDate/variableName?id=meTo "端 + 接收方"
+[mcfrom]: /note/newDate/variableName?id=mcFrom "空间ID#发送方"
+[mcto]: /note/newDate/variableName?id=mcTo "空间ID#接收方"
+[mefrom]: /note/newDate/variableName?id=meFrom "发送方#端"
+[meto]: /note/newDate/variableName?id=meTo "接收方#端"
 [needack]: /note/newDate/variableName?id=needAck "ack"
 [nodisturb]: /note/newDate/variableName?id=noDisturb "第三方推送"
 [s]: /note/newDate/variableName?id=s "用户id"

@@ -2,34 +2,33 @@
 
 ## 变量
 
-| 变量                           | 值          | 关联        | 描述                                |
-| ------------------------------ | ----------- | ----------- | ----------------------------------- |
-| `props`                        |             |             |                                     |
-| [msg](/note/newDate/ImDate.md) |             | [msg]       | 消息变量                            |
-| existat                        |             | false、true | 是否未读                            |
-| draft                          |             | false、true | 是否发送成功                        |
-| `data`                         |             |             |                                     |
-| hid                            |             | userInfo    | 个人 ID                             |
-| isCallMe                       | me、all、'' | existatText | 用于记录历史是否有 me 或者 all 消息 |
-| `watch`                        |             |             |                                     |
-| isCallMe                       |             | existat     | existat 重置 isCallMe               |
-| `computed`                     |             |             |                                     |
-| isFail                         |             |             | 是否发送失败                        |
-| existatText                    |             |             | @文案                               |
-| MIMETYPE                       |             | msg         | 消息类型                            |
-| `methods`                      |             |             |                                     |
-| efailed                        |             | msg.isStar  | 表示失败意思                        |
-| nameTxtYou                     |             |             |                                     |
-| nameTxt                        |             |             |                                     |
-| mettinginvite                  |             |             |                                     |
-| mettingcard                    |             |             |                                     |
-| voiceMsg                       |             |             |                                     |
-| filename                       |             |             |                                     |
-| getRestrictedText              |             |             |                                     |
-| imagename                      |             |             |                                     |
-| two                            |             |             |                                     |
-| recordtxt                      |             |             |                                     |
-| showDuration                   |             |             | 是否需求成员列表                    |
+| 变量                           | 值  | 关联        | 描述             |
+| ------------------------------ | --- | ----------- | ---------------- |
+| `props`                        |     |             |                  |
+| [msg](/note/newDate/ImDate.md) |     | [msg]       | 消息变量         |
+| existat                        |     | false、true | 是否未读         |
+| draft                          |     | false、true | 是否发送成功     |
+| remindListDate                 | []  | DB.message  | @List            |
+| `data`                         |     |             |                  |
+| hid                            |     | X.userInfo  | 个人 ID          |
+| `watch`                        |     |             |                  |
+| `computed`                     |     |             |                  |
+| isFail                         |     |             | 是否发送失败     |
+| existatText                    |     |             | @all/@me         |
+| MIMETYPE                       |     | msg         | 消息类型         |
+| `methods`                      |     |             |                  |
+| efailed                        |     | msg.isStar  | 表示失败意思     |
+| nameTxtYou                     |     |             |                  |
+| nameTxt                        |     |             |                  |
+| mettinginvite                  |     |             |                  |
+| mettingcard                    |     |             |                  |
+| voiceMsg                       |     |             |                  |
+| filename                       |     |             |                  |
+| getRestrictedText              |     |             |                  |
+| imagename                      |     |             |                  |
+| two                            |     |             |                  |
+| recordtxt                      |     |             |                  |
+| showDuration                   |     |             | 是否需求成员列表 |
 
 ### 变量值
 

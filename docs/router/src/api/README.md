@@ -71,7 +71,7 @@
 | :book: `loopConnectSocket.js`   |         |                                                                            |                |                                                         |
 | :book: `meetingApi.js`          |         |                                                                            |                |                                                         |
 | :book: `messageApi.js`          |         |                                                                            |                |                                                         |
-| :book: `messageManger.js`       |         |                                                                            |                |                                                         |
+| :book: `messageManger.js`       |         | [messageManger.js](/router/src/api/messageManger)                          |                |                                                         |
 | :book: `peerApi.js`             |         |                                                                            |                |                                                         |
 | initUserInfo                    | FN      |                                                                            |                |                                                         |
 | runTask\*                       | FN      |                                                                            |                |                                                         |
@@ -236,7 +236,7 @@
 | cancelCstSubMeeting             | P UC    | <i title="/meeting/cancel/sub">Copy</i>                                    |                |                                                         |
 | getMeetingDetailSub             | P UC    | <i title="/meeting/detail/sub">Copy</i>                                    |                |                                                         |
 | :book: `sessionApi.js`          |         |                                                                            |                |                                                         |
-| :book: `socketUtil.js`          |         |                                                                            |                |                                                         |
+| :book: `socketUtil.js`          |         | [socketUtil.js](/router/src/api/socketUtil)                                |                |                                                         |
 | :book: `spaceApi.js`            |         |                                                                            |                | 空间请求                                                |
 | getSpaceList                    | G UC    | <i title="/company/space">Copy</i>                                         | {enterpriseId} | 获取个人空间列表接口                                    |
 | switchSpace                     | G UC    | <i title="/company/switched">Copy</i>                                      |                | 企业空间切换接口                                        |
@@ -483,3 +483,5 @@ https://matrx-prod.obs.ae-ad-1.g42cloud.com/notice/error.json
 | 836        | STATUS_ERROR_DEVICED_CHANGED  |      |
 | 635        | STATUS_CLIENT_VERSION_TOO_OLD |      |
 | 400        | CLIENT_ERROR_BAD_REQUEST      |      |
+
+# [socketUtil.js](/router/src/api/socketUtil)
