@@ -1,4 +1,4 @@
-- [Index](/)
+- [首页](/)
 - [WIKI](/wiki/)
 - [错误码](/wiki/errorCode)
 - [会议投票](/wiki/Storyboard)

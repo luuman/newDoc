@@ -1,3 +1,3 @@
-- [Index](/)
+- [首页](/)
 - [editorconfig](/note/plug/editorconfig)
 - [打包命令](/note/plug/vueConfig)

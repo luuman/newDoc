@@ -1,4 +1,4 @@
-- [Index](/)
+- [首页](/)
 - [IM](/note/modules/IM)
 - [peer](/note/modules/peer)
 - [session](/note/modules/session)

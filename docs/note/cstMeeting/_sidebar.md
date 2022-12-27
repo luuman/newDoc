@@ -1,2 +1,2 @@
-- [Index](/)
+- [首页](/)
 - [技术方案](/note/cstMeeting/TechnicalSolutions)
