@@ -1,2 +1,2 @@
-- [首页](/)
+- [笔记](/note/)
 - [Web 会中](/note/meetingControl/)

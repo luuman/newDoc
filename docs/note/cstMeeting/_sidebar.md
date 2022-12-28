@@ -1,2 +1,2 @@
-- [首页](/)
+- [笔记](/note/)
 - [技术方案](/note/cstMeeting/TechnicalSolutions)

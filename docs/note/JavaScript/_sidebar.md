@@ -1,4 +1,4 @@
-- [首页](/)
+- [笔记](/note/)
 - [virtualList](/note/JavaScript/virtualList)
 - [worker](/note/JavaScript/worker)
 - [quillEdit](/note/JavaScript/quillEdit)
