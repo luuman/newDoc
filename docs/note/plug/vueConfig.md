@@ -80,7 +80,7 @@
 
 ## pages
 
-| 文件名称              | 窗口描述         | 入口                                   | 模板                              | 输出名称                   |
+| [页面](/note/Vue/)    | 窗口描述         | 入口                                   | 模板                              | 输出名称                   |
 | --------------------- | ---------------- | -------------------------------------- | --------------------------------- | -------------------------- |
 | start                 | SDK 通信         | renderer/start/main.js                 | public/start.html                 | start.html                 |
 | index                 | 主渲染进程       | renderer/src/main.js                   | public/index.html                 | index.html                 |

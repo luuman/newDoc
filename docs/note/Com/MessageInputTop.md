@@ -1,6 +1,17 @@
 # 输入框
 
-## 输入框模型
+## 思维导图
+
+<script>
+
+</script>
+
+```mermaid
+graph LR;
+	A-->B;
+	click A callback "Tooltip for a callback"
+	click B "http://cikaros.gitee.io" "This is a tooltip for a link"
+```
 
 ```mermaid
 stateDiagram-v2
@@ -34,35 +45,88 @@ stateDiagram-v2
 	state div {
 		message_hidden_input
   }
-	state action_icon_group {
+	state actionIconGroup {
 		emoji_icon
   }
 	state Y2 <<choice>>
-	Y2 --> message_sendbox_container: !isSubscribe
-	Y2 --> div: isSubscribe
+	Y2 --> message_sendbox_container: !isSubscribe则显示
+	Y2 --> div: isSubscribe则显示
 	note right of message_sendbox_container: 输入框变化
-	action_icon_group1 --> action_icon_group
+	action_icon_group1 --> actionIconGroup
 ```
+
+<!-- tabs:start -->
+
+<!-- tab:actionIconGroup -->
 
 ```mermaid
 stateDiagram-v2
 	state action_icon_group {
 		emoji_icon --> emojiMouseEnterHandle: 表情
-		[*] --> fileIcon_icon: !imageLimitInfo || !fileAcceptInfo
-		fileIcon_icon --> fileClickHandle: 文件
-		inputStyle --> fileChangeHandle_: change
+		state messageInputer {
+			emojiClick --> emojiSelected: 表情框
+			emojiSelected --> setRichFocus1: 移动框光标
+			insertText1: insertText
+			setRichFocus1: setRichFocus
+			setRichFocus1 --> insertText1: 添加表情
+			insertText1 --> hideSuggestions: 隐藏@群列表（无作用）
+			hideSuggestions --> onChange: 调整输入框高度
+
+			addMentionHandle --> refEditorAddMention: ref
+			setRichFocus2: setRichFocus
+			refEditorAddMention --> setRichFocus2: 移动框光标
+			insertText2: insertText
+			setRichFocus2 --> insertText2: 添加@
+			insertText2 --> checkAutocomplete: 检测输入内容
+			checkAutocomplete --> onChange: 调整输入框高度
+		}
+		emojiMouseEnterHandle --> emojiClick: ref
+
+		state Y1 <<choice>>
+		Y1 --> fileIcon_icon: !imageLimitInfo || !fileAcceptInfo
+		fileIcon_icon --> fileClickHandle
+		fileClickHandle --> inputStyle: 唤起 inputStyle
+		inputStyle --> fileChangeHandle_: @change
+		fileChangeHandle_ --> fileChangeHandle
+		fileChangeHandle --> produceFile
+		produceFile --> sendDialogDisplay: 发送弹窗
+		sendDialogDisplay --> SendFileDialog: sendDialogVisble = true
+		state SendFileDialog {
+			SendFileDialog1
+		}
+
 		namecard_icon --> nameCardHandle: 名片
-		nameCardHandle --> closeRightPanel
+		nameCardHandle --> membersToBeForward: namecardDialogVisable = true
+		membersToBeForward --> nextTick: 数据重置
+		nextTick --> closeRightPanel: 关闭右键菜单
+
 		mention_icon --> addMentionHandle: @
-		[*] --> down_icon
-		down_icon --> setHideMainWindow
+
+		down_icon --> setHideMainWindow: 截图设置
+		state shortcut {
+			setHideMainWindow2: setHideMainWindow
+			setHideMainWindow2 --> SCREEN_CAPTURE_HideMainWindow
+		}
+		setHideMainWindow --> shortcut: 1
+
 		screen_capture_wrap --> startScreenCapture: 截屏
+		startScreenCapture --> ipc_capture_screen
+		note right of ipc_capture_screen: capture-screen
   }
-	startScreenCapture --> ipc_capture_screen
-	note left of ipc_capture_screen: capture-screen
-	state shortcut {
-		setHideMainWindow2: setHideMainWindow
-		setHideMainWindow2 --> SCREEN_CAPTURE_HideMainWindow
-	}
-	setHideMainWindow --> shortcut: 1
+```
+
+<!-- tab:Icon -->
+
+Icon
+
+<!-- tabs:end -->
+
+## inputStyle 文件选择
+
+```
+<label for="upimfile" v-if="!imageLimitInfo || !fileAcceptInfo" class="chat_icon upimfile">按钮</label>
+<input type="file" multiple="multiple" class="inputStyle" id="upimfile" name="upimfile" :accept="fileAcceptValue" @change="fileChangeHandle_" ref="fileInput">
+
+<label for="peas">Do you like peas?</label>
+<input type="file" name="peas" id="peas">
 ```

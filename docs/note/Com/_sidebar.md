@@ -1,5 +1,7 @@
 - [笔记](/note/)
+- [MessageTip](/note/Com/MessageTip)
 - [MessageInput](/note/Com/MessageInput)
 - [MessageInputTop](/note/Com/MessageInputTop)
+- [成员选择器](/note/Com/MembersToBeAdded)
 - [Login](/note/Com/Login)
 - [LdapLogin](/note/Com/LdapLogin)

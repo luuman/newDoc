@@ -49,6 +49,30 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
 
   <style type="text/css">
+    .markdown-section a .node rect,
+    .markdown-section a .node circle,
+    .markdown-section a .node ellipse,
+    .markdown-section a .node polygon,
+    .markdown-section a .node path {
+      stroke: var(--accent) !important;
+      rx: 5;
+      ry: 5;
+    }
+
+    .markdown-section .cluster rect {
+      fill: #333 !important;
+      rx: 5px;
+      ry: 5px;
+    }
+
+    .node.clickable::after {
+      /* .node.clickable.hover::after { */
+      /* content: attr(data-title); */
+      content: 'attr(data-title)';
+    }
+  </style>
+
+  <style type="text/css">
     #docsify-darklight-theme {
       top: -4px;
     }
@@ -497,7 +521,22 @@
   <!-- mermaid -->
   <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
   <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'cardinal',
+      },
+      securityLevel: 'loose',
+      theme: 'dark'
+    });
+    var callback = (...argList) => {
+      console.warn(argList, this)
+      // alert(event);
+    }
+  </script>
 
   <!-- CDN files for docsify-katex -->
   <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->

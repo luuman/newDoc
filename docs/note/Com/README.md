@@ -1,33 +1,36 @@
-interviewFe
+# 组件
 
-?> 完善示例
+## 创建
 
-#### ceshi
+## 弹窗
 
-- Question 2? +
+| 组件名称        | NODE_ENV | VUE_APP_MODE | 描述       |
+| --------------- | -------- | ------------ | ---------- |
+| MeetingDialog   |          |              | 会议邀请   |
+| ContactsPanel   |          |              | 创建群组   |
+| SessionList     |          |              | 新建会话   |
+| MemberAddDialog |          |              | 群成员邀请 |
+| MeetingDialog   |          |              | 会议邀请   |
 
-  Answer 2
+MembersToBeAdded
 
-#### ceshi
+###
 
-#### ceshi
+###
 
-<div id="gitalk-container"></div>
+###
 
-<details>
-<summary>自我评价（点击展开）
+###
 
-- bar
-- [x] baz
-- [] bam <~ not working
-  - [ ] bim
-  - [ ] lim
-  -
-  -
+src\components\HW\MeetingDialog.vue
+src\components\Panel\ContactsPanel.vue
+src\components\SessionList.vue
+src\components\Dialog\MemberAddDialog.vue
+src\renderer\meetingInvite\MeetingDialog.vue
 
-</summary>
+src\components\settings\util\MembersToBeAdded.vue
 
-- Abc
-- Abc
+src\components\settings\util\MembersToBeInvite.vue
 
-</details>
+src\components\Panel\ContactsPanel.vue
+src\components\ChatHead.vue
