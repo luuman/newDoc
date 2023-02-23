@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "bf69a72384514887",
+    "type": "split",
+    "children": [
+      {
+        "id": "32a7461f8f123100",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0cf03f4ffae714b",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true
+            }
+          },
+          {
+            "id": "bf0f495124d86d2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "makedown/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "192f6b4395378005",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e003367f297393f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3afa25e588e9b519",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7ce1fb99504c9bcc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8bef1f5320b82a1b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a89d3619ab6d8625",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bc1c27ab570d5a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee017dfb291deac4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "makedown/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7f6af2ccd8da5396",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "makedown/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7ce9e04fb731e76f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "30882ef4a16c5a16",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "makedown/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "publish:发布更改": false
+    }
+  },
+  "active": "bf0f495124d86d2a",
+  "lastOpenFiles": [
+    "README.md",
+    "模块分类.canvas",
+    "ContactsOrganization.md",
+    "组织架构.md",
+    "note/JavaScript/worker.md",
+    "note/newDate/ImDate.md",
+    "router/src/directive.md",
+    "note/Com/README.md",
+    "note/Com/MessageTip.md",
+    "note/Com/MessageInput.md",
+    "note/Com/MembersToBeAdded.md",
+    "note/Com/Login.md",
+    "note/Com/_sidebar.md",
+    "wiki/spaces.md",
+    "wiki/Storyboard.md",
+    "wiki/README.md",
+    "wiki/nodeVersion.md",
+    "wiki/figmaIconSvg.md",
+    "wiki/errorCode.md",
+    "wiki/_sidebar.md"
+  ]
+}

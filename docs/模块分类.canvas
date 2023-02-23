@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"4058226871f13e5f","x":-1040,"y":-300,"width":1000,"height":620,"type":"text","text":"大师傅的"},
+		{"id":"1d7466238dbd3c67","x":-940,"y":-240,"width":400,"height":380,"type":"file","file":"组织架构.md"}
+	],
+	"edges":[]
+}
