@@ -2,63 +2,63 @@
 
 ## 目录
 
-| 文件名称                                           | 描述              | 标签分类 | 更新状态       |
-| -------------------------------------------------- | ----------------- | -------- | -------------- |
-| :arrow_left: [首页](/)                             |                   |          |                |
-| [.git/](/router/git/)                              |                   |          | 待完善 :punch: |
-| [.husky/](/router/git/)                            |                   |          | 待完善 :punch: |
-| [.vscode/](/router/git/)                           | VSCode            |          | 待完善 :punch: |
-| ![avr_electron_17.4.4/](/router/avr_electron/)     | 加密打包资源      |          | 待完善 :punch: |
-| ![avr_scripts/](/router/avr_scripts/)              | 加密打包资源      |          | 待完善 :punch: |
-| ![build/](/router/build/)                          | 打包资源          |          | 待完善 :punch: |
-| ![devtools/](/router/devtools/)                    | 控制台            | plug     | 待完善 :punch: |
-| ![dist/](/router/dist/)                            | 打包静态资源      |          | 待完善 :punch: |
-| ![dist_electron/](/router/dist_electron/)          | 打包导出地址      |          | 待完善 :punch: |
-| ![docs/](/router/docs/)                            |                   |          | 待完善 :punch: |
-| ![logs/](/router/logs/)                            |                   |          | 待完善 :punch: |
-| [node_modules/](/router/node_modules/)             | 依赖库            |          | 待完善 :punch: |
-| ![nsis_build/](/router/nsis_build/)                | nsis              |          | 待完善 :punch: |
-| ![patches/](/router/patches/)                      |                   |          | 待完善 :punch: |
-| ![public/](/router/public/)                        | 公共资源          |          | 待完善 :punch: |
-| ![resources/](/router/resources/)                  | 静态资源库        |          | 待完善 :punch: |
-| ![scripts/](/router/scripts/)                      |                   |          | 待完善 :punch: |
-| :dart: [src/](/router/src/)                        |                   |          | 待完善 :punch: |
-| ![.browserslistrc](/router/1.md)                   |                   |          | 待完善 :punch: |
-| [.editorconfig](/note/plug/editorconfig.md)        | 定义编码样式      |          | 待完善 :punch: |
-| [.env](/note/plug/vueConfig.md)                    |                   |          | 待完善 :punch: |
-| [.env.development](/note/plug/vueConfig.md)        |                   |          | 待完善 :punch: |
-| [.env.production](/note/plug/vueConfig.md)         |                   |          | 待完善 :punch: |
-| [.env.rd](/note/plug/vueConfig.md)                 |                   |          | 待完善 :punch: |
-| ![.eslintignore](/router/1.md)                     | eslint            |          | 待完善 :punch: |
-| ![.eslintrc.js](/router/1.md)                      | eslint            |          | 待完善 :punch: |
-| ![.gitignore](/router/1.md)                        |                   |          | 待完善 :punch: |
-| ![.lintstagedrc](/router/1.md)                     |                   |          | 待完善 :punch: |
-| ![.sentryclirc](/router/1.md)                      |                   |          | 待完善 :punch: |
-| :package: [appxConfig.js](/note/plug/vueConfig.md) | 打包分类配置      |          | 待完善 :punch: |
-| ![babel.config.js](/router/1.md)                   | babel 配置（ES6） |          | 待完善 :punch: |
-| ~~[body.json](/router/1.md)~~                      | 未使用功能        |          | 待完善 :punch: |
-| :package: [build.js](/note/plug/vueConfig.md)      | 打包 Package 配置 |          | 待完善 :punch: |
-| ![commitlint.config.js](/router/git/)              | commit 规则       |          | 待完善 :punch: |
-| ~~[common.json](/router/1.md)~~                    |                   |          | 待完善 :punch: |
-| ![config.js](/router/1.md)                         |                   |          | 待完善 :punch: |
-| :package: [exeConfig.js](/note/plug/vueConfig.md)  |                   |          | 待完善 :punch: |
-| :bat: [install.bat](/router/1.md)                  |                   |          | 待完善 :punch: |
-| ![matrx.pfx](/router/1.md)                         |                   |          | 待完善 :punch: |
-| :package: [msiConfig.js](/note/plug/vueConfig.md)  |                   |          | 待完善 :punch: |
-| :bat: [node-init.bat](/router/1.md)                |                   |          | 待完善 :punch: |
-| ![package-lock.json](/router/1.md)                 |                   |          | 待完善 :punch: |
-| ![package.json](/router/1.md)                      |                   |          | 待完善 :punch: |
-| ![postcss.config.js](/router/1.md)                 |                   |          | 待完善 :punch: |
-| ![prettier.config.js](/router/1.md)                | prettier 配置     |          | 待完善 :punch: |
-| ![README.md](/router/1.md)                         |                   |          | 待完善 :punch: |
-| :sos: [sentry-symbols.js](/router/1.md)            |                   |          | 待完善 :punch: |
-| :sos: [sentry.properties](/router/1.md)            |                   |          | 待完善 :punch: |
-| ![sonar-project.properties](/router/1.md)          |                   |          | 待完善 :punch: |
-| :bat: [sonarqube.bat](/router/1.md)                |                   |          | 待完善 :punch: |
-| ![sonarqube.sh](/router/1.md)                      |                   |          | 待完善 :punch: |
-| ![upload-sourcemaps.js](/router/1.md)              |                   |          | 待完善 :punch: |
-| ![version.js](/router/1.md)                        | 发布版本记录      |          | 待完善 :punch: |
-| [vue.config.js](/note/plug/vueConfig.md)           | 打包配置项        |          | 待完善 :punch: |
+| 文件名称                                           | 描述                   | 标签分类 | 更新状态       |
+| -------------------------------------------------- | ---------------------- | -------- | -------------- |
+| :arrow_left: [首页](/)                             |                        |          |                |
+| [.git/](/router/git/)                              | git                    |          | 待完善 :punch: |
+| [.husky/](/router/git/)                            | git 检测器             |          | 待完善 :punch: |
+| [.vscode/](/router/git/)                           | VSCode                 |          | 待完善 :punch: |
+| ![avr_electron_17.4.4/](/router/avr_electron/)     | 加密打包资源           |          | 待完善 :punch: |
+| ![avr_scripts/](/router/avr_scripts/)              | 加密打包资源           |          | 待完善 :punch: |
+| ![build/](/router/build/)                          | 打包资源               |          | 待完善 :punch: |
+| ![devtools/](/router/devtools/)                    | 控制台                 | plug     | 待完善 :punch: |
+| ![dist/](/router/dist/)                            | 打包静态资源           |          | 待完善 :punch: |
+| ![dist_electron/](/router/dist_electron/)          | 打包导出地址           |          | 待完善 :punch: |
+| ![docs/](/router/docs/)                            | 未使用功能             |          | 待完善 :punch: |
+| ![logs/](/router/logs/)                            | 未使用功能             |          | 待完善 :punch: |
+| [node_modules/](/router/node_modules/)             | 依赖库                 |          | 待完善 :punch: |
+| ![nsis_build/](/router/nsis_build/)                | nsis                   |          | 待完善 :punch: |
+| ![patches/](/router/patches/)                      |                        |          | 待完善 :punch: |
+| ![public/](/router/public/)                        | 公共资源               |          | 待完善 :punch: |
+| ![resources/](/router/resources/)                  | 静态资源库             |          | 待完善 :punch: |
+| ![scripts/](/router/scripts/)                      |                        |          | 待完善 :punch: |
+| :dart: [src/](/router/src/)                        |                        |          | 待完善 :punch: |
+| ![.browserslistrc](/router/1.md)                   | 目标浏览器和 node 版本 |          | 待完善 :punch: |
+| [.editorconfig](/note/plug/editorconfig.md)        | 定义编码样式           |          | 待完善 :punch: |
+| [.env](/note/plug/vueConfig.md)                    | 环境变量               |          | 待完善 :punch: |
+| [.env.development](/note/plug/vueConfig.md)        | 环境变量               |          | 待完善 :punch: |
+| [.env.production](/note/plug/vueConfig.md)         | 环境变量               |          | 待完善 :punch: |
+| [.env.rd](/note/plug/vueConfig.md)                 | 环境变量               |          | 待完善 :punch: |
+| ![.eslintignore](/router/1.md)                     | eslint 白名单          |          | 待完善 :punch: |
+| ![.eslintrc.js](/router/1.md)                      | eslint 配置            |          | 待完善 :punch: |
+| ![.gitignore](/router/1.md)                        | git 白名单             |          | 待完善 :punch: |
+| ![.gitmodules](/router/1.md)                       | git 模块               |          | 待完善 :punch: |
+| ![.lintstagedrc](/router/1.md)                     |                        |          | 待完善 :punch: |
+| ![.sentryclirc](/router/1.md)                      |                        |          | 待完善 :punch: |
+| :package: [appxConfig.js](/note/plug/vueConfig.md) | 打包分类配置           |          | 待完善 :punch: |
+| ![babel.config.js](/router/1.md)                   | babel 配置（ES6）      |          | 待完善 :punch: |
+| ~~[body.json](/router/1.md)~~                      | 未使用功能             |          | 待完善 :punch: |
+| :package: [build.js](/note/plug/vueConfig.md)      | 打包 Package 配置      |          | 待完善 :punch: |
+| ![commitlint.config.js](/router/git/)              | commit 规则            |          | 待完善 :punch: |
+| ~~[common.json](/router/1.md)~~                    |                        |          | 待完善 :punch: |
+| ![config.js](/router/1.md)                         |                        |          | 待完善 :punch: |
+| :package: [exeConfig.js](/note/plug/vueConfig.md)  |                        |          | 待完善 :punch: |
+| :bat: [install.bat](/router/1.md)                  |                        |          | 待完善 :punch: |
+| ![matrx.pfx](/router/1.md)                         |                        |          | 待完善 :punch: |
+| :package: [msiConfig.js](/note/plug/vueConfig.md)  |                        |          | 待完善 :punch: |
+| :bat: [node-init.bat](/router/1.md)                |                        |          | 待完善 :punch: |
+| ![package.json](/router/1.md)                      |                        |          | 待完善 :punch: |
+| ![postcss.config.js](/router/1.md)                 | postcss 配置           |          | 待完善 :punch: |
+| ![prettier.config.js](/router/1.md)                | VSCode 配置            |          | 待完善 :punch: |
+| ![README.md](/router/1.md)                         |                        |          | 待完善 :punch: |
+| :sos: [sentry-symbols.js](/router/1.md)            |                        |          | 待完善 :punch: |
+| :sos: [sentry.properties](/router/1.md)            |                        |          | 待完善 :punch: |
+| ![sonar-project.properties](/router/1.md)          |                        |          | 待完善 :punch: |
+| :bat: [sonarqube.bat](/router/1.md)                |                        |          | 待完善 :punch: |
+| ![sonarqube.sh](/router/1.md)                      |                        |          | 待完善 :punch: |
+| ![upload-sourcemaps.js](/router/1.md)              |                        |          | 待完善 :punch: |
+| version.js                                         | 发布版本记录           |          | 待完善 :punch: |
+| [vue.config.js](/note/plug/vueConfig.md)           | 打包配置项             |          | 待完善 :punch: |
 
 ## 案例
 

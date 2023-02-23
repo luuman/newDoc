@@ -364,7 +364,7 @@ const config = {
 
 module.exports = config;
 
-# config
+## config 全局配置
 
 | 名称              | 关联                                               | 标签分类 | 描述             |
 | ----------------- | -------------------------------------------------- | -------- | ---------------- |
@@ -390,3 +390,24 @@ module.exports = config;
 | defaultConf       |                                                    |          | 默认服务端配置   |
 | isPrivated        | currentConfig.privatization                        |          | 是否开启私有化   |
 | payPlanlinkConfig |                                                    |          | 付款链接配置     |
+
+## envConf 服务环境地址配置
+
+| 名称                 | 描述       |
+| -------------------- | ---------- |
+| apiBasePath          |            |
+| dohBaseName          |            |
+| meetingUrlPrefix     |            |
+| websitePath          |            |
+| meetingUrlPrefixReg  |            |
+| reportMeetingApiBase |            |
+| avrRiskToken         | 直播 Token |
+| avrRiskUrl           | 直播地址   |
+
+| 名称      | moi | private | public |
+| --------- | --- | ------- | ------ |
+| io        |     |         | x      |
+| solutions |     |         | x      |
+| tech      |     |         | x      |
+| work      |     |         | x      |
+| empty     |     |         |        |

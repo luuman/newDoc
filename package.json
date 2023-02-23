@@ -17,6 +17,10 @@
     "url": "https://github.com/luuman/interviewFe/issues"
   },
   "homepage": "https://blog.luuman.club/interviewFe/#/",
-  "dependencies": {},
+  "dependencies": {
+    "docsify": "^4.13.0",
+    "docsify-cli": "^4.4.4",
+    "open": "^8.4.0"
+  },
   "devDependencies": {}
 }

@@ -1,3 +1,4 @@
+- [首页](/)
 - [目录](/router/)
 - [笔记](/note/)
 - [makedown](/makedown/)

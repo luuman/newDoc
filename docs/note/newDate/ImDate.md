@@ -1340,6 +1340,28 @@ body按vcard定义书写。每个字段是一行（“\n”分隔）。至少包
     "uuid": "685bafed-7412-45b9-9194-7ce0fde5b044"
   }
 }
+{
+  "a": 5,
+  "c": "Notification",
+  "expire": 1678776137339,
+  "f": "AAAAAAABT_E",
+  "l": 5184000,
+  "m": {
+    "body": {
+      "conversation": "86213902450255894|8029719081419190100",
+      "read": "1",
+      "readtime": "1673592137332",
+      "trigger": "86213902450255894",
+    },
+    "ctime": 1673592137335,
+    "type": "ReadChanged",
+    "uuid": "fb3000bd-e35a-4da8-a9c3-a94aa40404a5",
+  },
+  "mcTo": "UAE-971-1000000#86213902450255894",
+  "meTo": "86213902450255894#desktop",
+  "needAck": true,
+  "t": "ATJLFmY_aBY"
+}
 ```
 
 #### Meeting_List_Changed
