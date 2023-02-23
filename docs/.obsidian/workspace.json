@@ -23,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "makedown/README.md",
+                "file": "wiki/_sidebar.md",
                 "mode": "source",
                 "source": false
               }
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "makedown/README.md",
+                "file": "wiki/_sidebar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "makedown/README.md",
+                "file": "wiki/_sidebar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "makedown/README.md"
+                "file": "wiki/_sidebar.md"
               }
             }
           }
@@ -160,7 +160,21 @@
   },
   "active": "bf0f495124d86d2a",
   "lastOpenFiles": [
+    "js/mermaid/mermaid.min.js",
+    "js/mermaid",
+    "js/mermaid.min.js",
+    "wiki 1.md",
+    "wiki.md",
+    "wiki 2.md",
+    "wiki/_sidebar.md",
+    "wiki/errorCode.md",
+    "wiki/README.md",
+    "wiki/spaces.md",
+    "wiki/Storyboard.md",
+    "wiki/nodeVersion.md",
+    "wiki/figmaIconSvg.md",
     "README.md",
+    "makedown/README.md",
     "模块分类.canvas",
     "ContactsOrganization.md",
     "组织架构.md",
@@ -172,13 +186,6 @@
     "note/Com/MessageInput.md",
     "note/Com/MembersToBeAdded.md",
     "note/Com/Login.md",
-    "note/Com/_sidebar.md",
-    "wiki/spaces.md",
-    "wiki/Storyboard.md",
-    "wiki/README.md",
-    "wiki/nodeVersion.md",
-    "wiki/figmaIconSvg.md",
-    "wiki/errorCode.md",
-    "wiki/_sidebar.md"
+    "note/Com/_sidebar.md"
   ]
 }
