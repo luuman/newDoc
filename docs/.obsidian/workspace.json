@@ -18,19 +18,18 @@
             }
           },
           {
-            "id": "bf0f495124d86d2a",
+            "id": "fbe1099325eef6d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/_sidebar.md",
+                "file": "ContactsOrganization.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -59,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#meeting",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +95,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/_sidebar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +111,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/_sidebar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,12 +132,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "wiki/_sidebar.md"
-              }
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -158,34 +154,43 @@
       "publish:发布更改": false
     }
   },
-  "active": "bf0f495124d86d2a",
+  "active": "b0cf03f4ffae714b",
   "lastOpenFiles": [
-    "js/mermaid/mermaid.min.js",
-    "js/mermaid",
-    "js/mermaid.min.js",
-    "wiki 1.md",
-    "wiki.md",
-    "wiki 2.md",
-    "wiki/_sidebar.md",
-    "wiki/errorCode.md",
+    "note/Assert/模块划分.md",
+    "note/Assert",
+    "_media/example.md",
+    "ContactsOrganization.md",
+    "模块分类.canvas",
+    "README.md",
+    "router/src/components/TroubleShooting.md",
+    "router/README.md",
+    "src/utils/Function.js.md",
+    "_media/apple-icon.png",
+    "_media/favicon-16x16.png",
+    "_media/html5.svg",
+    "router/src/components/kits/README.md",
+    "note/modules/LdapLogin.md",
+    "note/JavaScript/worker.md",
+    "note/JavaScript/virtualList.md",
+    "note/JavaScript/_sidebar.md",
+    "note/JavaScript/quillEdit.md",
+    "_sidebar.md",
+    "router/src/api/socketUtil.md",
+    "router/src/api/README.md",
+    "router/src/api/messageManger.md",
+    "router/src/api/dohApi.md",
+    "router/src/api/axiosInstance.md",
+    "router/src/assets/README.md",
+    "src/utils",
+    "src",
+    "wiki/nodeVersion.md",
     "wiki/README.md",
     "wiki/spaces.md",
     "wiki/Storyboard.md",
-    "wiki/nodeVersion.md",
     "wiki/figmaIconSvg.md",
-    "README.md",
-    "makedown/README.md",
-    "模块分类.canvas",
-    "ContactsOrganization.md",
-    "组织架构.md",
-    "note/JavaScript/worker.md",
-    "note/newDate/ImDate.md",
-    "router/src/directive.md",
-    "note/Com/README.md",
-    "note/Com/MessageTip.md",
-    "note/Com/MessageInput.md",
-    "note/Com/MembersToBeAdded.md",
-    "note/Com/Login.md",
-    "note/Com/_sidebar.md"
+    "wiki/errorCode.md",
+    "js/mermaid/mermaid.min.js",
+    "js/mermaid",
+    "js/mermaid.min.js"
   ]
 }

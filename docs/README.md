@@ -2,6 +2,10 @@
 
 # 相关资料
 
+<a>sdafsdfsdf</a>
+
+[filename](../_media/example.md ":include :type=code")
+
 ## 1
 
 [gitlab](https://gitlab.corp.matrx.team/)

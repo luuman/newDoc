@@ -1,11 +1,11 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": true,
-  "showAttachments": false,
-  "hideUnresolved": false,
-  "showOrphans": true,
-  "collapse-color-groups": true,
+  "showAttachments": true,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file:README",
@@ -22,17 +22,24 @@
       }
     },
     {
-      "query": "section:()",
+      "query": "path:/",
       "color": {
         "a": 1,
         "rgb": 11657298
       }
     },
     {
-      "query": "",
+      "query": "section:(router)",
       "color": {
         "a": 1,
-        "rgb": 5431378
+        "rgb": 14352384
+      }
+    },
+    {
+      "query": "tag:meeting",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
       }
     }
   ],
@@ -46,6 +53,6 @@
   "repelStrength": 10.6770833333333,
   "linkStrength": 0.359375,
   "linkDistance": 75,
-  "scale": 0.13168724279835411,
+  "scale": 0.5359795996225936,
   "close": false
 }

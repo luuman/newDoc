@@ -5,3 +5,9 @@
 - [未分类](/note/Stock/)
   - [每日一题](/note/)
   - [WIKI](/wiki/)
+- Getting started
+
+  - [Quick start](quickstart.md)
+  - [Writing more pages](more-pages.md)
+  - [Custom navbar](custom-navbar.md)
+  - [Cover page](cover.md)
