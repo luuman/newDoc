@@ -350,3 +350,291 @@ class Statement {
 
 module.exports = Database;
 ```
+```
+const sqlite3 = require('@journeyapps/sqlcipher').verbose();
+const config = require('@/config/config.js');
+const pkgVersion = '5.0.2';
+const dbPwdMap = {};
+
+class Database {
+  static get OPEN_READONLY() {
+    return sqlite3.OPEN_READONLY;
+  }
+
+  static get OPEN_READWRITE() {
+    return sqlite3.OPEN_READWRITE;
+  }
+
+  static get OPEN_CREATE() {
+    return sqlite3.OPEN_CREATE;
+  }
+
+  static get SQLITE3_VERSION() {
+    return pkgVersion;
+  }
+
+  async open(filename, mode = Database.OPEN_READWRITE | Database.OPEN_CREATE) {
+    if (this.db) {
+      throw new Error('Database.open: database is already open');
+    }
+    await new Promise((resolve, reject) => {
+      const db = new sqlite3.Database(filename, mode, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          this.db = db;
+          this.filename = filename;
+          resolve();
+        }
+      });
+    });
+    return this;
+  }
+
+  async close() {
+    if (!this.db) {
+      throw new Error('Database.close: database is not open');
+    }
+    await new Promise((resolve, reject) => {
+      this.db.close((err) => {
+        if (err) {
+          reject(err);
+        } else {
+          this.db = null;
+          resolve();
+        }
+      });
+    });
+  }
+
+  async run(...args) {
+    if (!this.db) {
+      throw new Error('Database.run: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      const callback = (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve({
+            lastID: this.db.lastID,
+            changes: this.db.changes,
+          });
+        }
+      };
+      this.db.run(...args, callback);
+    });
+  }
+
+  async get(...args) {
+    if (!this.db) {
+      throw new Error('Database.get: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      const callback = (err, row) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      };
+      this.db.get(...args, callback);
+    });
+  }
+
+  async all(...args) {
+    if (!this.db) {
+      throw new Error('Database.all: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      const callback = (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      };
+      this.db.all(...args, callback);
+    });
+  }
+
+  async each(...args) {
+    if (args.length === 0 || typeof args[args.length - 1] !== 'function') {
+      throw new TypeError('Database.each: last arg is not a function');
+    }
+    if (!this.db) {
+      throw new Error('Database.each: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      const callback = (err, nrows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(nrows);
+        }
+      };
+      this.db.each(...args, callback);
+    });
+  }
+
+  async exec(sql) {
+    if (!this.db) {
+      throw new Error('Database.exec: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      this.db.exec(sql, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
+  async transaction(fn) {
+    await this.exec('BEGIN TRANSACTION');
+    try {
+      const result = await fn(this);
+      await this.exec('END TRANSACTION');
+      return result;
+    } catch (err) {
+      await this.exec('ROLLBACK TRANSACTION');
+      throw err;
+    }
+  }
+
+  async prepare(...args) {
+    if (!this.db) {
+      throw new Error('Database.prepare: database is not open');
+    }
+    return new Promise((resolve, reject) => {
+      const statement = this.db.prepare(...args, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(new Statement(statement));
+        }
+      });
+    });
+  }
+
+  getDBPassword(vuid) {
+    if (!vuid) {
+      return;
+    }
+    if (dbPwdMap[vuid]) {
+      return dbPwdMap[vuid];
+    }
+    const pwBuffer = ipcRenderer.sendSync('fetchDBPassword', vuid);
+    const result = Buffer.from(pwBuffer).toString('hex');
+    dbPwdMap[vuid] = result;
+    return dbPwdMap[vuid];
+  }
+
+  getDBPath(vuid) {
+    return path.join(config.configDir, vuid, `${vuid}.ackdb.enc`);
+  }
+}
+
+class Statement {
+  constructor(statement) {
+    if (!(statement instanceof sqlite3.Statement)) {
+      throw new TypeError(`Statement: 'statement' is not a statement instance`);
+    }
+    this.statement = statement;
+  }
+
+  async bind(...args) {
+    return new Promise((resolve, reject) => {
+      this.statement.bind(...args, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this);
+        }
+      });
+    });
+  }
+
+  async reset() {
+    return new Promise((resolve, reject) => {
+      this.statement.reset(() => {
+        resolve(this);
+      });
+    });
+  }
+
+  async finalize() {
+    return new Promise((resolve, reject) => {
+      this.statement.finalize((err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
+  async run(...args) {
+    return new Promise((resolve, reject) => {
+      const callback = (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve({
+            lastID: this.statement.lastID,
+            changes: this.statement.changes,
+          });
+        }
+      };
+      this.statement.run(...args, callback);
+    });
+  }
+
+  async get(...args) {
+    return new Promise((resolve, reject) => {
+      const callback = (err, row) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      };
+      this.statement.get(...args, callback);
+    });
+  }
+
+  async all(...args) {
+    return new Promise((resolve, reject) => {
+      const callback = (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      };
+      this.statement.all(...args, callback);
+    });
+  }
+
+  async each(...args) {
+    if (args.length === 0 || typeof args[args.length - 1] !== "function") {
+      throw TypeError("Statement.each: last arg is not a function");
+    }
+    return new Promise((resolve, reject) => {
+      const callback = (err, nrows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(nrows);
+        }
+      };
+      this.statement.each(...args, callback);
+    });
+  }
+}
+
+module.exports = Database;
+```
