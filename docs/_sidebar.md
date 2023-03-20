@@ -1,4 +1,4 @@
-- [首页](/)
+<!-- - [首页](/)
 - [目录](/router/)
 - [笔记](/note/)
 - [makedown](/makedown/)
@@ -10,4 +10,31 @@
   - [Quick start](quickstart.md)
   - [Writing more pages](more-pages.md)
   - [Custom navbar](custom-navbar.md)
-  - [Cover page](cover.md)
+  - [Cover page](cover.md) -->
+
+- 入门
+  - [项目介绍](/notes/入门/项目介绍)
+  - [前端规范](/notes/入门/前端规范)
+  - [日志相关](/notes/入门/日志相关)
+- 项目管理
+  - [项目管理](/notes/项目管理/)
+- 本地存储
+  - 数据库
+    - [DB 概况](/notes/本地存储/DB概况)
+    - [DB 表概况](/notes/本地存储/DB表概况)
+    - [数据库存储](/notes/本地存储/数据库存储)
+    - [数据库查询列表](/notes/本地存储/数据库查询列表)
+  - 本地
+    - [本地文件存储](/notes/本地存储/本地文件存储)
+  - 资源缓存
+    - [文件资源缓存](/notes/本地存储/文件资源缓存)
+- 会议模块
+- 聊天模块
+- 主进程
+  - [进程管理](/notes/主进程/进程管理)
+  - [流程梳理](/notes/主进程/流程梳理)
+- 资料收集
+  - [资料收集](/notes/资料收集/)
+- 相关资料
+  - [docfiy 案例](/notes/相关资料/docfiy案例)
+  - [Arya](/notes/相关资料/Arya)

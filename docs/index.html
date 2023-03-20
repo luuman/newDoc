@@ -22,7 +22,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./_media/icon/Icon-32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="./_media/icon/Icon-96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./_media/icon/Icon-16.png">
-  <link rel="manifest" href="./_media/manifest.json">
+  <link rel="manifest" href="./_media/favicon/manifest.json">
   <meta name="msapplication-TileImage" content="./_media/icon/Icon-144.png">
   <meta name="theme-color" content="#ffffff">
   <meta name="msapplication-TileColor" content="#ffffff">
@@ -47,7 +47,121 @@
   <!-- sidebar -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
+  <style>
+    .h2wrap-body {
+      background-color: var(--color-canvas-subtle);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.5rem;
+      padding-top: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 #0000, 0 0 #0000, 0 6px 8px rgb(102 119 136 / 3%), 0 1px 2px rgb(102 119 136 / 30%);
+    }
 
+    .wrap-class {
+      background-color: var(--color-canvas-subtle);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.5rem;
+      padding-top: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 #0000, 0 0 #0000, 0 6px 8px rgb(102 119 136 / 3%), 0 1px 2px rgb(102 119 136 / 30%);
+    }
+
+    .col-span-2 {
+      grid-column: span 2 / span 2;
+    }
+
+    .wrap-class>ul,
+    .wrap-class>ol,
+    .wrap-class>dl {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: grid;
+      list-style-position: outside;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .h2wrap-body ul li,
+    .h2wrap-body ol li,
+    .h2wrap-body dl li {
+      position: relative;
+    }
+
+    .h2wrap-body ul {
+      counter-reset: stepCount;
+    }
+
+    .h2wrap-body ul>li:first-child:before {
+      background-color: #228e6c;
+      color: rgb(226 232 240/1);
+    }
+
+    .h2wrap-body ul>li::before {
+      color: #228e6c;
+      background-color: var(--color-canvas-default);
+      counter-increment: stepCount;
+      content: counter(stepCount);
+      border-radius: initial;
+      border-radius: 0.5rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      line-height: 1.3rem;
+      border: 2px solid #228e6c;
+      top: -1px;
+      left: -14px;
+    }
+
+    .h2wrap-body ul>li:last-child {
+      border-image: linear-gradient(to bottom, #46c69e96, rgba(0, 0, 0, 0)) 1 100%;
+    }
+
+    .h2wrap-body ul>li {
+      border-bottom: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 25px !important;
+      border-left: 2px solid #46c69e96;
+      margin-left: 30px;
+      border-left-color: #46c69e96;
+    }
+
+    .h2wrap-body ul>li>pre {
+      padding: 0 !important;
+      padding-top: 10px !important;
+      height: initial !important;
+    }
+
+    .h2wrap-body ul.style-round li::before {
+      border-radius: 9999px;
+      border-width: 2px;
+      height: 0.5rem;
+      width: 0.5rem;
+      border-color: #228e6c;
+      background: transparent;
+      border-style: solid;
+      top: 14px;
+    }
+
+    .h2wrap-body ul.style-arrow li:before {
+      position: absolute;
+      background-color: transparent;
+      border-radius: initial;
+      left: 16px;
+      top: 13px;
+    }
+
+    .wrap-body ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .wrap-body ul:last-child li:last-child {
+      border-bottom: 0;
+    }
+  </style>
   <style type="text/css">
     .markdown-section a .node rect,
     .markdown-section a .node circle,
@@ -287,6 +401,31 @@
         }
       },
       plugins: [
+        // 代码内嵌引用
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            const searchRegExp = /\[\[(\S*?)\]\]/g;
+            html = html.replace(searchRegExp, ($1, $2) => {
+              // console.log($1, $2);
+              return `[filename](./${$2}.md ':include :type=text')\n`
+            })
+            // console.log(html)
+            return html;
+          });
+        },
+        // function (hook, vm) {
+        //   hook.afterEach(function (html, next) {
+        //     // <!--rehype:wrap-class=row-span-2-->
+        //     let tabBlockMarkup = /( *)<!-+\s?rehype:(.*?)\s?-+>(?:(?!(<!-+\s?rehype:\s*?(?:className\=style-timeline)\s?-+>))[\s\S])*<!-+\s?rehype:className=style-timeline\s?-+>/;
+        //     let tabBlockMatch = html.match(tabBlockMarkup);
+        //     console.log(tabBlockMatch);
+        //     html = html.replace(tabBlockMarkup, ($1, $2, $3, $4, $5, $6, $7) => {
+        //       console.log('$1', $1, '$2', $2, '$3', $3, '$4', $4, '$5', $5, '$6', $6, '$7', $7);
+        //       return `<div class="h2wrap-body ${$3.split('=').join(' ')}">${$1}</div>`
+        //     })
+        //     next(html);
+        //   });
+        // },
         // 二级文档归纳
         // function (hook, vm) {
         //   hook.beforeEach(function (html) {

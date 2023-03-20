@@ -1,4 +1,4 @@
-![icon](_media/html5.svg)
+![icon](_media/svg/html5.svg)
 
 # Interview Fe
 
@@ -27,7 +27,8 @@
     z-index: -2;
     width: 100%;
     height: 100%;
-  }
+
+}
 </style>
 
 <script>
@@ -54,6 +55,7 @@
     <!-- Loading stuff -->
 
     Loading the data just for you.
+
 </div>
 
 <script>
